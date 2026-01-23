@@ -2942,3 +2942,81 @@ select.mobile-device {
   background: #0056b3;
   color: #fff;
 }
+/* Tech Stack Cards */
+.tech-card {
+  background: #ffffff;
+  color: #111;
+  border-radius: 18px;
+  padding: 28px 24px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+}
+
+/* Hover effect */
+.tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  border-color: #007bff;
+}
+
+/* Icon */
+.tech-icon {
+  font-size: 34px;
+  margin-bottom: 12px;
+  color: #007bff;
+}
+
+/* Headings */
+.tech-card h4 {
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+/* Tags container */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Skill tags */
+.tech-tags span {
+  background: #f1f5f9;
+  color: #111;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  transition: all 0.25s ease;
+  cursor: default;
+  border: 1px solid #e2e8f0;
+}
+
+/* Hover on tags */
+.tech-tags span:hover {
+  background: #007bff;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+/* Different accent colors per card */
+.tech-card.backend .tech-icon {
+  color: #28a745;
+}
+.tech-card.frontend .tech-icon {
+  color: #6f42c1;
+}
+.tech-card.database .tech-icon {
+  color: #fd7e14;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .tech-card {
+    margin-bottom: 20px;
+  }
+}
