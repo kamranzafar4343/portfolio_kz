@@ -3020,3 +3020,155 @@ select.mobile-device {
     margin-bottom: 20px;
   }
 }
+/* ================= HERO SECTION ================= */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background: url("uploads/banner-01.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* dark overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 0;
+}
+
+/* content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  color: #fff;
+}
+
+/* name */
+.hero-content h1 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+/* subtitle */
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #dddddd;
+  margin-bottom: 22px;
+}
+
+/* tags */
+.hero-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.hero-tags span {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #ffffff;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.hero-tags span:hover {
+  background: #ffffff;
+  color: #111111;
+  transform: translateY(-3px);
+}
+
+/* buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* primary button */
+.hero-buttons .btn-primary {
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+  padding: 12px 30px;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: 0.3s;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.hero-buttons .btn-primary:hover {
+  background: #333333;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.4);
+}
+
+/* outline button */
+.hero-buttons .btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 12px 30px;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.hero-buttons .btn-outline:hover {
+  background: #ffffff;
+  color: #111111;
+  transform: translateY(-4px);
+}
+
+/* ================= NAVBAR MATCH ================= */
+
+.custom-nav {
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  padding: 12px 0;
+}
+
+.custom-nav .nav-link {
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-left: 18px;
+  transition: 0.3s;
+}
+
+.custom-nav .nav-link:hover {
+  color: #cccccc;
+}
+
+.custom-nav .navbar-brand {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-tags span {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+}
