@@ -1,146 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-   
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
- 
-     <!-- Site Metas -->
-    <title>Kamran</title>  
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <title>Kamran Zafar | PHP & Laravel Software Engineer</title>
+  <meta name="description" content="Kamran Zafar - Software Engineer specializing in PHP, Laravel, ERP systems, REST APIs, Oracle SQL, MySQL, SaaS platforms, dashboards, and business applications.">
+  <meta name="keywords" content="Kamran Zafar, PHP Developer, Laravel Developer, Software Engineer, ERP Developer, Oracle SQL, MySQL, REST API Developer">
+  <meta name="author" content="Kamran Zafar">
 
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/custom.css">
 
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
+  <style>
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #f6f8fb;
+      color: #1f2937;
+      font-family: Arial, sans-serif;
+    }
+
+    .custom-nav {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 14px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .navbar-brand {
+      color: #fff !important;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-link {
+      color: #dbeafe !important;
+      font-weight: 600;
+      margin-left: 18px;
+    }
+
+    .nav-link:hover { color: #38bdf8 !important; }
+
+    .hero-modern {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.22), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(99,102,241,0.25), transparent 35%),
+        linear-gradient(135deg, #020617, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-container {
+      max-width: 980px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(90deg, #38bdf8, #818cf8, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 24px;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 22px;
+    }
+
+    .hero-summary {
+      max-width: 800px;
+      margin: 0 auto 28px;
+      color: #e2e8f0;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .hero-tags span {
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      padding: 9px 15px;
+      border-radius: 999px;
+      color: #e0f2fe;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero-actions a {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      margin: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-main {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .btn-main:hover {
+      background: #0ea5e9;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+    }
+
+    .btn-outline:hover {
+      background: #38bdf8;
+      color: #020617;
+      transform: translateY(-3px);
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-title h3 {
+      font-size: 36px;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #64748b;
+      font-size: 16px;
+    }
+
+    .about-card,
+    .project-card,
+    .tech-card,
+    .experience-card,
+    .service-card,
+    .contact-form-card,
+    .contact-card {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .about-card {
+      padding: 36px;
+    }
+
+    .about-card h2 {
+      font-size: 34px;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }
+
+    .about-card p {
+      color: #475569;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .about-image img {
+      border-radius: 28px;
+      max-height: 460px;
+      object-fit: cover;
+      box-shadow: 0 24px 60px rgba(15,23,42,0.18);
+    }
+
+    .stats-row {
+      margin-top: 24px;
+    }
+
+    .stat-box {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 24px;
+      color: #0f172a;
+    }
+
+    .stat-box span {
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .project-card {
+      overflow: hidden;
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .project-card:hover,
+    .tech-card:hover,
+    .experience-card:hover,
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(15,23,42,0.14);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .project-body {
+      padding: 24px;
+    }
+
+    .project-body h4 {
+      font-size: 21px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .project-body p {
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+
+    .project-tags span,
+    .tech-tags span {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .project-btn {
+      display: inline-block;
+      background: #0f172a;
+      color: #fff !important;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .project-btn:hover {
+      background: #2563eb;
+      color: #fff !important;
+    }
+
+    .experience-card,
+    .service-card,
+    .tech-card {
+      padding: 28px;
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .experience-card h4,
+    .service-card h4,
+    .tech-card h4 {
+      color: #0f172a;
+      font-weight: 850;
+      margin-bottom: 10px;
+    }
+
+    .experience-card .role {
+      color: #2563eb;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .experience-card ul {
+      padding-left: 18px;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .service-card i,
+    .tech-icon i {
+      font-size: 34px;
+      color: #2563eb;
+      margin-bottom: 18px;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 20px;
+      margin-bottom: 16px;
+      text-decoration: none;
+      color: #0f172a;
+      transition: 0.3s;
+    }
+
+    .contact-card:hover {
+      transform: translateX(6px);
+      color: #2563eb;
+    }
+
+    .contact-card i {
+      font-size: 24px;
+      color: #2563eb;
+    }
+
+    .contact-card span {
+      display: block;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    .contact-form-card {
+      padding: 30px;
+    }
+
+    .contact-form-card input,
+    .contact-form-card textarea {
+      width: 100%;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      outline: none;
+    }
+
+    .contact-form-card button {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 13px 24px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .copyrights {
+      background: #020617;
+      color: #cbd5e1;
+      padding: 24px 0;
+      text-align: center;
+    }
+
+    .copyrights a {
+      color: #38bdf8;
+    }
+
+    @media(max-width: 768px) {
+      .hero-title { font-size: 38px; }
+      .hero-subtitle { font-size: 19px; }
+      .section { padding: 60px 0; }
+    }
+  </style>
 </head>
-<style>
-    .gallery-single {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
 
-.gallery-single img {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
+<body id="page-top">
 
-.gallery-single:hover img {
-    transform: scale(1.1); /* Slight zoom effect */
-}
-
-
-.right-box-pro img {
-    position: relative;
-    z-index: 2;
-    object-fit: cover;
-    object-position: center;
-}
-
-.right-box-pro {
-    position: relative;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.right-box-pro::before {
-    content: "";
-    background: url(images/country-quilt-dark.png);
-    width: 98%;
-    height: 99.45%;
-    position: absolute;
-    bottom: -0.5rem;
-    right: 1.1rem;
-    z-index: 0;
-}
-
-.img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-single:hover .img-overlay {
-    opacity: 1;
-}
-
-.hoverbutton {
-    text-decoration: none;
-}
-
-.hoverbutton button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff; /* Bootstrap Primary Color */
-    border: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.hoverbutton button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-}
-
-</style>
-<body id="page-top" class="politics_version">
-
-    <!-- LOADER -->
-    <!-- <div id="preloader">
-        <div id="main-ld">
-			<div id="loader"></div>  
-		</div>
-    </div> -->
-    <!-- end loader -->
-    <!-- END LOADER -->
-	
-  <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top custom-nav">
   <div class="container">
-    <a class="navbar-brand" href="#">Kamran</a>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
-      <span class="navbar-toggler-icon"></span>
+    <a class="navbar-brand" href="#home">Kamran Zafar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+      <i class="fa fa-bars" style="color:white;"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+        <li class="nav-item"><a href="#portfolio" class="nav-link">Projects</a></li>
         <li class="nav-item"><a href="#tech-stack" class="nav-link">Tech</a></li>
         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
@@ -148,250 +429,321 @@
   </div>
 </nav>
 
-
-<!-- HERO SECTION -->
 <section id="home" class="hero-modern">
-  <div class="hero-bg"></div>
-
-  <div class="hero-blobs">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
   <div class="hero-container">
     <h1 class="hero-title">
-       <span> Hi, I’m Kamran Zafar</span>
+      <span>Software Engineer | PHP & Laravel</span>
     </h1>
 
     <h2 class="hero-subtitle">
-      Software Engineer · PHP · Laravel · ERP Systems
+      ERP Systems · SaaS Platforms · REST APIs · Oracle SQL · Business Applications
     </h2>
 
+    <p class="hero-summary">
+      I build backend systems, ERP modules, dashboards, REST APIs, and business workflows using PHP, Laravel,
+      Core PHP, Oracle SQL, MySQL, JavaScript, AJAX, and modern deployment tools.
+    </p>
+
     <div class="hero-tags">
-      <span>Custom Dashboards</span>
-      <span>Point of sale</span>
-      <span>Financial Reporting</span>
-      <span>API Integration</span>
+      <span>2+ Years Experience</span>
+      <span>ERP Development</span>
+      <span>Laravel APIs</span>
+      <span>Oracle SQL</span>
+      <span>Production Support</span>
+      <span>Remote Collaboration</span>
     </div>
 
     <div class="hero-actions">
       <a href="#portfolio" class="btn-main">View Projects</a>
-      <a href="#contact" class="btn-outline">Contact Me</a>
+      <a href="https://drive.google.com/file/d/1JnUv4Dt6bhJuBINNBNkFbgWnDwLH6Bj2/view?usp=sharing" target="_blank" class="btn-outline">Download Resume</a>
     </div>
   </div>
 </section>
 
+<div id="about" class="section wb">
+  <div class="container">
+    <div class="row align-items-center">
 
+      <div class="col-md-6">
+        <div class="about-card">
+          <h2>About Me</h2>
 
- <div id="about" class="section wb">
-    <div class="container">
-        <div class="row align-items-center">
+          <p>
+            I’m Kamran Zafar, a Computer Science graduate and Software Engineer specializing in PHP, Laravel,
+            ERP systems, REST APIs, SaaS platforms, and business applications.
+          </p>
 
-            <!-- LEFT: TEXT -->
-            <div class="col-md-6">
-                <div class="about-card">
-                    <h2>About Me</h2>
-                    <p>
-                        I’m a Computer Science graduate working as a Software Engineer, with hands-on experience
-                        in maintaining and enhancing live web systems built with PHP, Laravel, and WordPress.
-                    </p>
+          <p>
+            My experience includes complete software delivery: requirement gathering, development, database work,
+            testing, deployment, production support, and improving real business workflows.
+          </p>
 
-                    <p>
-                        My work includes POS and ERP feature development, bug fixing in production systems,
-                        providing technical support, and customizing existing applications based on business needs.
-                    </p>
+          <p>
+            I have worked on ERP modules, POS customization, warehouse systems, backend jobs, automated email reminders,
+            API integrations, reports, dashboards, and Oracle SQL/MySQL based data workflows.
+          </p>
 
-                    <p>
-                        I regularly work with SQL for data handling, reporting, and query optimization,
-                        and contribute to improving system performance and reliability in real-world environments.
-                    </p>
-
-<a href="https://drive.google.com/file/d/1JnUv4Dt6bhJuBINNBNkFbgWnDwLH6Bj2/view?usp=sharing"
-   class="project-btn"
-   target="_blank">
-   <i class="fa fa-download"></i> Download Resume
-</a>
-
-                </div>
+          <div class="row stats-row">
+            <div class="col-4">
+              <div class="stat-box">
+                <strong>2+</strong>
+                <span>Years Exp.</span>
+              </div>
             </div>
-
-            <!-- RIGHT: IMAGE -->
-            <div class="col-md-6 text-center">
-                <div class="about-image">
-                    <img src="uploads/picture.png" alt="Kamran Zafar" class="img-fluid">
-                </div>
+            <div class="col-4">
+              <div class="stat-box">
+                <strong>ERP</strong>
+                <span>Systems</span>
+              </div>
             </div>
+            <div class="col-4">
+              <div class="stat-box">
+                <strong>APIs</strong>
+                <span>Laravel</span>
+              </div>
+            </div>
+          </div>
 
+          <br>
+
+          <a href="https://drive.google.com/file/d/1JnUv4Dt6bhJuBINNBNkFbgWnDwLH6Bj2/view?usp=sharing"
+             class="project-btn"
+             target="_blank">
+            <i class="fa fa-download"></i> Download Resume
+          </a>
         </div>
+      </div>
+
+      <div class="col-md-6 text-center mt-4 mt-md-0">
+        <div class="about-image">
+          <img src="uploads/picture.png" alt="Kamran Zafar" class="img-fluid">
+        </div>
+      </div>
+
     </div>
+  </div>
 </div>
 
-	
-    <div id="portfolio" class="section lb">
+<div id="experience" class="section lb">
   <div class="container">
     <div class="section-title text-left">
-      <h3>Projects</h3>
-      <p>Some of the real-world applications and systems I’ve worked on.</p>
+      <h3>Experience</h3>
+      <p>Real-world backend, ERP, SaaS, and business system development experience.</p>
     </div>
 
     <div class="row">
 
-      <!-- Project 1 -->
+      <div class="col-md-6 mb-4">
+        <div class="experience-card">
+          <h4>Cola Next / Mezan Beverages</h4>
+          <div class="role">Software Engineer — ERP Development & Support</div>
+          <ul>
+            <li>Developed ERP modules, Oracle SQL database solutions, backend workflows, forms, reports, and REST APIs using Core PHP and Laravel.</li>
+            <li>Collaborated directly with business departments to gather requirements, implement solutions, conduct testing, deploy features, and provide production support.</li>
+            <li>Worked on operational workflows, distributor management, sales tracking, stock handling, reports, and data-driven business processes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="experience-card">
+          <h4>Coach Tribe</h4>
+          <div class="role">Remote Backend Developer — SaaS Platform</div>
+          <ul>
+            <li>Developed backend features for a SaaS coaching platform, including REST APIs, automated email reminders, file cleanup jobs, and automated tests.</li>
+            <li>Collaborated with cross-functional, cross-cultural teams across multiple countries and time zones to deliver backend solutions and API integrations.</li>
+            <li>Worked in a remote setup with meetings, communication, issue solving, backend improvements, and production-focused development.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="portfolio" class="section wb">
+  <div class="container">
+    <div class="section-title text-left">
+      <h3>Projects</h3>
+      <p>Selected projects showing ERP, SaaS, APIs, dashboards, and business application experience.</p>
+    </div>
+
+    <div class="row">
+
       <div class="col-md-4 col-sm-6 mb-4">
         <div class="project-card">
-          <img src="uploads/1.PNG" alt="ERP System">
+          <img src="uploads/1.PNG" alt="Enterprise ERP Solutions">
           <div class="project-body">
-            <h4>ERP Web Application</h4>
-            <p>Enterprise system built with Laravel and PHP for managing business operations and reports.</p>
+            <h4>Enterprise ERP Solutions</h4>
+            <p>
+              Implemented ERP solutions for distribution, inventory, warehouse, sales, and operational departments
+              using Laravel, Core PHP, Oracle SQL, MySQL, AJAX, and JavaScript.
+            </p>
+            <div class="project-tags">
+              <span>Laravel</span>
+              <span>Core PHP</span>
+              <span>Oracle SQL</span>
+              <span>ERP</span>
+            </div>
             <a href="https://app.oradigitals.com" target="_blank" class="project-btn">Live Demo</a>
           </div>
         </div>
       </div>
 
-      <!-- Project 2 -->
       <div class="col-md-4 col-sm-6 mb-4">
         <div class="project-card">
-          <img src="uploads/article front.png" alt="AI Article Tool">
+          <img src="uploads/new dashboard eg.PNG" alt="Warehouse Management System">
+          <div class="project-body">
+            <h4>Warehouse Management System</h4>
+            <p>
+              Built a warehouse system with authentication, role-based access control, company and branch management,
+              inventory tracking, rack management, and barcode generation features.
+            </p>
+            <div class="project-tags">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>AJAX</span>
+              <span>Bootstrap</span>
+            </div>
+            <a href="https://github.com/kamranzafar4343/Warehouse-Management-System" target="_blank" class="project-btn">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="project-card">
+          <img src="uploads/article front.png" alt="AI Article Summarizer">
           <div class="project-body">
             <h4>AI Article Summarizer</h4>
-            <p>Web app using OpenAI API to summarize articles with a clean and simple interface.</p>
+            <p>
+              Web application using OpenAI API to summarize articles with a clean interface,
+              API integration, and frontend-focused user experience.
+            </p>
+            <div class="project-tags">
+              <span>API</span>
+              <span>JavaScript</span>
+              <span>Frontend</span>
+              <span>OpenAI</span>
+            </div>
             <a href="https://openai-gpt4model-article-summarizer.netlify.app/" target="_blank" class="project-btn">Live Demo</a>
           </div>
         </div>
       </div>
 
-      <!-- Project 3 -->
-      <div class="col-md-4 col-sm-6 mb-4">
-        <div class="project-card">
-          <img src="uploads/new dashboard eg.PNG" alt="Dashboard">
-          <div class="project-body">
-            <h4>Business Dashboard</h4>
-            <p>Interactive dashboard for data visualization and financial reporting.</p>
-            <a href="https://staging.egrocify.com" target="_blank" class="project-btn">Live Demo</a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
 
-    
-    <div id="services" class="section lb">
-    <div class="container">
-        <div class="section-title text-left">
-            <h3>What I Do</h3>
-            <p>I help businesses build reliable backend systems, dashboards, and web applications using modern PHP and Laravel.</p>
-        </div>
-
-        <div class="row">
-
-            <!-- Service 1 -->
-            <div class="col-md-4">
-                <div class="services-inner-box minimal-service">
-                    <img 
-                        src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
-                        alt="Backend Development"
-                        class="img-fluid service-img"
-                    >
-                    <h4>Backend & Web Development</h4>
-                    <p>
-                        Custom PHP & Laravel applications, clean backend architecture,
-                        authentication systems, and scalable web solutions.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="col-md-4">
-                <div class="services-inner-box minimal-service">
-                    <img 
-                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-                        alt="ERP Reporting"
-                        class="img-fluid service-img"
-                    >
-                    <h4>ERP & Financial Reporting</h4>
-                    <p>
-                        Development of ERP modules, dashboards, and financial reports
-                        with real-world business logic and database-driven insights.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="col-md-4">
-                <div class="services-inner-box minimal-service">
-                    <img 
-                        src="https://images.unsplash.com/photo-1518770660439-4636190af475"
-                        alt="API Integration"
-                        class="img-fluid service-img"
-                    >
-                    <h4>REST APIs & Integrations</h4>
-                    <p>
-                        Secure REST APIs, third-party API integrations,
-                        payment gateways, and system-to-system communication.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-	
-
- <div id="tech-stack" class="section lb">
+<div id="services" class="section lb">
   <div class="container">
     <div class="section-title text-left">
-      <h3>Tech Stack</h3>
-      <p>Technologies I use to build scalable systems and modern web applications.</p>
+      <h3>What I Do</h3>
+      <p>I help businesses build reliable backend systems, dashboards, APIs, ERP modules, and operational workflows.</p>
     </div>
 
     <div class="row">
 
-      <!-- Backend -->
       <div class="col-md-4 mb-4">
-        <div class="tech-card backend">
-          <div class="tech-icon"><i class="fas fa-server"></i></div>
+        <div class="service-card">
+          <i class="fas fa-server"></i>
+          <h4>Backend Development</h4>
+          <p>
+            PHP and Laravel backend development, REST APIs, authentication systems,
+            automated jobs, testing, and clean business logic implementation.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="service-card">
+          <i class="fas fa-building"></i>
+          <h4>ERP & Business Systems</h4>
+          <p>
+            ERP modules, POS customization, warehouse workflows, reporting systems,
+            distributor operations, inventory handling, and department-based solutions.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="service-card">
+          <i class="fas fa-database"></i>
+          <h4>Database & Reports</h4>
+          <p>
+            Oracle SQL, MySQL, queries, reports, dashboards, data handling,
+            workflow optimization, and production-level database support.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="tech-stack" class="section wb">
+  <div class="container">
+    <div class="section-title text-left">
+      <h3>Tech Stack</h3>
+      <p>Technologies and tools I use for backend, ERP, databases, frontend, and deployment workflows.</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-3 mb-4">
+        <div class="tech-card">
+          <div class="tech-icon"><i class="fas fa-code"></i></div>
           <h4>Backend</h4>
           <div class="tech-tags">
             <span>PHP</span>
             <span>Laravel</span>
+            <span>Core PHP</span>
             <span>REST APIs</span>
-            <span>Auth Systems</span>
           </div>
         </div>
       </div>
 
-      <!-- Frontend -->
-      <div class="col-md-4 mb-4">
-        <div class="tech-card frontend">
-          <div class="tech-icon"><i class="fas fa-code"></i></div>
+      <div class="col-md-3 mb-4">
+        <div class="tech-card">
+          <div class="tech-icon"><i class="fas fa-database"></i></div>
+          <h4>Databases</h4>
+          <div class="tech-tags">
+            <span>Oracle SQL</span>
+            <span>MySQL</span>
+            <span>MongoDB</span>
+            <span>Firebase</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <div class="tech-card">
+          <div class="tech-icon"><i class="fas fa-laptop-code"></i></div>
           <h4>Frontend</h4>
           <div class="tech-tags">
+            <span>JavaScript</span>
+            <span>AJAX</span>
+            <span>jQuery</span>
             <span>HTML5</span>
             <span>CSS3</span>
             <span>Bootstrap</span>
-            <span>JavaScript</span>
-            <span>jQuery</span>
-            <span>AJAX</span>
           </div>
         </div>
       </div>
 
-      <!-- Databases & Tools -->
-      <div class="col-md-4 mb-4 ">
-        <div class="tech-card database">
-          <div class="tech-icon"><i class="fas fa-database"></i></div>
-          <h4>Databases & Tools</h4>
+      <div class="col-md-3 mb-4">
+        <div class="tech-card">
+          <div class="tech-icon"><i class="fas fa-toolbox"></i></div>
+          <h4>Tools</h4>
           <div class="tech-tags">
-            <span>MySQL</span>
-            <span>Oracle DB</span>
             <span>Git</span>
             <span>GitHub</span>
-            <span>Linux</span>
-            <span>ERP Systems</span>
+            <span>Postman</span>
+            <span>TOAD</span>
+            <span>WinSCP</span>
+            <span>FileZilla</span>
+            <span>cPanel</span>
+            <span>XAMPP</span>
+            <span>Laravel Herd</span>
           </div>
         </div>
       </div>
@@ -400,180 +752,117 @@
   </div>
 </div>
 
-
-    
-	
-	<div id="testimonials clearfix modern-testimonial" class="section wb">
-    <div class="container">
-        <div class="section-title text-left">
-            <h3>Testimonials</h3>
-            <p>Feedback from colleagues and stakeholders I’ve worked with on real projects.</p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="testi-carousel owl-carousel owl-theme">
-
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial clearfix">
-                        <div class="desc">
-                            <p class="lead">
-                                Kamran consistently delivered reliable backend solutions and was quick to understand complex business requirements.
-                            </p>
-                        </div>
-                        <div class="testi-meta">
-                            <img src="uploads/testi_01.png" alt="" class="img-fluid alignleft">
-                            <h4>Operations Manager <small>ERP & Finance Systems</small></h4>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial clearfix">
-                        <div class="desc">
-                            <p class="lead">
-                                He worked efficiently on Laravel modules and API integrations, ensuring stability and clean implementation.
-                            </p>
-                        </div>
-                        <div class="testi-meta">
-                            <img src="uploads/testi_02.png" alt="" class="img-fluid alignleft">
-                            <h4>Senior Developer <small>Web Applications</small></h4>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial clearfix">
-                        <div class="desc">
-                            <p class="lead">
-                                Kamran showed strong ownership of ERP reporting features and handled production issues with professionalism.
-                            </p>
-                        </div>
-                        <div class="testi-meta">
-                            <img src="uploads/testi_03.png" alt="" class="img-fluid alignleft">
-                            <h4>Project Lead <small>Enterprise Systems</small></h4>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="testimonial clearfix">
-                        <div class="desc">
-                            <p class="lead">
-                                Clear communication, timely delivery, and a solid understanding of backend development workflows.
-                            </p>
-                        </div>
-                        <div class="testi-meta">
-                            <img src="uploads/testi_01.png" alt="" class="img-fluid alignleft">
-                            <h4>Technical Coordinator <small>Internal Platforms</small></h4>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+<div id="certifications" class="section lb">
+  <div class="container">
+    <div class="section-title text-left">
+      <h3>Certifications</h3>
+      <p>Certifications and learning focused on backend, APIs, Laravel, and modern software development.</p>
     </div>
+
+    <div class="row">
+
+      <div class="col-md-6 mb-4">
+        <div class="experience-card">
+          <h4>Full-Stack Development with Laravel & PHP</h4>
+          <div class="role">Coursera — Dec. 2025</div>
+          <p>Focused on Laravel, PHP, backend development, application structure, and full-stack workflows.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="experience-card">
+          <h4>API Fundamentals Student Expert</h4>
+          <div class="role">Postman — Aug. 2025</div>
+          <p>Focused on REST APIs, API testing, request handling, documentation, and backend integration workflows.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-	
-<div id="contact" class="section db">
-    <div class="container">
-        <div class="section-title text-left">
-            <h3>Get in Touch</h3>
-            <p>Let’s connect — whether it’s a role, project, or collaboration.</p>
-        </div>
-
-        <div class="row">
-
-            <!-- LEFT: Social / Contact Links -->
-            <div class="col-md-5">
-                <div class="contact-links">
-
-                    <a href="mailto:kamranzafar4343@gmail.com" class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <span>Email</span>
-                            <strong>kamranzafar4343@gmail.com</strong>
-                        </div>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/kamranzafar4343/" target="_blank" class="contact-card">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
-                            <span>LinkedIn</span>
-                            <strong>linkedin.com/in/kamranzafar4343</strong>
-                        </div>
-                    </a>
-
-                    <a href="https://github.com/kamranzafar4343" target="_blank" class="contact-card">
-                        <i class="fab fa-github"></i>
-                        <div>
-                            <span>GitHub</span>
-                            <strong>github.com/kamranzafar4343</strong>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-
-            <!-- RIGHT: Contact Form -->
-            <div class="col-md-7">
-                <div class="contact-form-card">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" placeholder="Your Email" required>
-                            </div>
-                        </div>
-
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-
-                        <button type="submit">
-                            Send Message
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
+<div id="contact" class="section wb">
+  <div class="container">
+    <div class="section-title text-left">
+      <h3>Get in Touch</h3>
+      <p>Open to PHP, Laravel, ERP, backend, SaaS, and remote/on-site software development opportunities.</p>
     </div>
+
+    <div class="row">
+
+      <div class="col-md-5">
+        <div class="contact-links">
+
+          <a href="mailto:kamranzafar4343@gmail.com" class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <span>Email</span>
+              <strong>kamranzafar4343@gmail.com</strong>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/kamranzafar4343/" target="_blank" class="contact-card">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <span>LinkedIn</span>
+              <strong>linkedin.com/in/kamranzafar4343</strong>
+            </div>
+          </a>
+
+          <a href="https://github.com/kamranzafar4343" target="_blank" class="contact-card">
+            <i class="fab fa-github"></i>
+            <div>
+              <span>GitHub</span>
+              <strong>github.com/kamranzafar4343</strong>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="contact-form-card">
+          <form action="mailto:kamranzafar4343@gmail.com" method="post" enctype="text/plain">
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" name="email" placeholder="Your Email" required>
+              </div>
+            </div>
+
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+            <button type="submit">
+              Send Message <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
+<div class="copyrights">
+  <div class="container">
+    <p>All Rights Reserved. &copy; 2026 <a href="#">Kamran Zafar</a></p>
+  </div>
+</div>
 
-    <div class="copyrights">
-        <div class="container">
-            <div class="footer-distributed">
-                <div class="footer-left">
-                    <p class="footer-links">
-                        <a href="#">Home</a>
-                       
-                        <a href="#">About</a>
-                        <a href="#">Faq</a>
-                        <a href="#">Contact</a>
-                    </p>
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2026 <a href="#">Kamran Zafar</a>  
-					<!-- <a href="https://html.design/">html design</a></p> -->
-                </div>
-            </div>
-        </div><!-- end container -->
-    </div><!-- end copyrights -->
+<a href="#" id="scroll-to-top" class="dmtop global-radius">
+  <i class="fa fa-angle-up"></i>
+</a>
 
-    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-
-    <!-- ALL JS FILES -->
-    <script src="js/all.js"></script>
-	<!-- Camera Slider -->
-	<script src="js/jquery.mobile.customized.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script> 
-	<script src="js/parallaxie.js"></script>
-	<script src="js/headline.js"></script>
-	<!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="js/custom.js"></script>
-    <!-- <script src="js/jquery.vide.js"></script> -->
+<script src="js/all.js"></script>
+<script src="js/jquery.mobile.customized.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/parallaxie.js"></script>
+<script src="js/headline.js"></script>
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+<script src="js/custom.js"></script>
 
 </body>
 </html>
