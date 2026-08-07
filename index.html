@@ -3,35 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kamran Zafar | PHP & Laravel Software Engineer</title>
-  <meta name="description" content="Kamran Zafar - PHP & Laravel Software Engineer specializing in ERP systems, SaaS platforms, REST APIs, Oracle SQL, MySQL, and business logic.">
+  <title>Kamran Zafar | PHP & Laravel Backend Engineer</title>
+  <meta name="description" content="Kamran Zafar - PHP & Laravel Software Engineer specializing in ERP systems, SaaS platforms, REST APIs, Oracle SQL, and MySQL databases.">
 
-  <!-- Inter Font -->
+  <!-- Inter & Fira Code Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
   <style>
     :root {
-      --bg: #0b0f17;
-      --card-bg: rgba(18, 24, 38, 0.7);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --card-border-hover: rgba(59, 130, 246, 0.4);
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
-      --accent: #3b82f6;
-      --accent-glow: rgba(59, 130, 246, 0.15);
+      --bg: #0d1117;
+      --bg-alt: #161b22;
+      --card-bg: rgba(22, 27, 34, 0.75);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --card-border-hover: rgba(56, 189, 248, 0.4);
+      --text-main: #f0f6fc;
+      --text-muted: #8b949e;
+      --accent-blue: #2563eb;
       --accent-sky: #38bdf8;
-      --radius: 16px;
+      --accent-green: #238636;
+      --code-bg: #090d13;
+      --radius: 12px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    @media (min-width: 993px) {
+      body {
+        cursor: none;
+      }
+    }
+
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-sky);
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease;
+    }
+
+    .cursor-outline {
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, top 0.15s ease-out, left 0.15s ease-out;
     }
 
     html {
@@ -44,6 +80,7 @@
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     a {
@@ -52,32 +89,29 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
     .section {
-      padding: 90px 0;
+      padding: 80px 0;
     }
 
-    /* TYPOGRAPHY */
     .section-title {
-      margin-bottom: 45px;
+      margin-bottom: 40px;
     }
 
     .section-title span {
-      color: var(--accent);
+      color: var(--accent-sky);
+      font-family: 'Fira Code', monospace;
       font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .section-title h2 {
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 800;
       letter-spacing: -1px;
       color: var(--text-main);
@@ -85,36 +119,35 @@
 
     .section-title p {
       color: var(--text-muted);
-      max-width: 650px;
+      max-width: 600px;
       margin-top: 8px;
       font-size: 15px;
     }
 
-    /* GLASS CARD */
     .glass-card {
       background: var(--card-bg);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s ease;
     }
 
     .glass-card:hover {
       border-color: var(--card-border-hover);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 30px var(--accent-glow);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     }
 
-    /* NAVIGATION */
+    /* NAVBAR */
     .navbar {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 100;
-      background: rgba(11, 15, 23, 0.85);
-      backdrop-filter: blur(16px);
+      background: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--card-border);
-      padding: 18px 0;
+      padding: 16px 0;
     }
 
     .navbar .container {
@@ -124,76 +157,84 @@
     }
 
     .logo {
-      font-weight: 900;
-      font-size: 20px;
-      letter-spacing: -0.5px;
-    }
-
-    .logo span {
-      color: var(--accent);
+      font-family: 'Fira Code', monospace;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--accent-sky);
     }
 
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 24px;
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--text-muted);
       transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      color: var(--accent-sky);
+      color: var(--text-main);
     }
 
     /* HERO */
     .hero {
-      padding: 160px 0 80px;
-      background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.12), transparent 50%);
+      padding: 140px 0 60px;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.12), transparent 40%),
+                  radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.08), transparent 40%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
+      padding: 4px 12px;
       border-radius: 999px;
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.2);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2);
       color: var(--accent-sky);
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-size: 54px;
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -2px;
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
       margin-bottom: 20px;
     }
 
+    .hero h1 {
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
     .hero h1 span {
-      background: linear-gradient(135deg, var(--accent-sky), var(--accent));
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      font-size: 18px;
+      font-size: 16px;
       color: var(--text-muted);
-      max-width: 700px;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
+      line-height: 1.7;
     }
 
     .hero-btns {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
@@ -201,59 +242,140 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 24px;
-      border-radius: 999px;
-      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13px;
       font-weight: 700;
       transition: all 0.2s;
-      cursor: pointer;
     }
 
     .btn-primary {
-      background: var(--accent);
+      background: var(--accent-blue);
       color: #fff;
     }
 
     .btn-primary:hover {
-      background: #2563eb;
+      background: #1d4ed8;
       transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--bg-alt);
       border: 1px solid var(--card-border);
       color: var(--text-main);
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: var(--card-border-hover);
       transform: translateY(-2px);
     }
 
-    /* ABOUT */
-    .about-card {
-      padding: 36px;
+    /* TERMINAL MOCKUP */
+    .terminal-window {
+      background: var(--code-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      font-family: 'Fira Code', monospace;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
 
-    .about-card p {
+    .terminal-header {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    .terminal-title {
+      font-size: 11px;
       color: var(--text-muted);
-      margin-bottom: 16px;
-      font-size: 15px;
+      margin-left: 6px;
     }
 
-    /* TIMELINE / LIST EXPERIENCE */
+    .terminal-body {
+      padding: 18px;
+      font-size: 12px;
+      line-height: 1.8;
+      color: #d4d4d4;
+    }
+
+    .code-keyword { color: #569cd6; }
+    .code-var { color: #9cdcfe; }
+    .code-string { color: #ce9178; }
+    .code-function { color: #dcdcaa; }
+
+    /* ABOUT */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .about-card-main {
+      padding: 30px;
+    }
+
+    .about-card-main h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .about-card-main p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .about-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .metric-box {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .metric-box h4 {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--accent-sky);
+      font-family: 'Fira Code', monospace;
+    }
+
+    .metric-box p {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* EXPERIENCE TIMELINE */
     .experience-list {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      position: relative;
+      gap: 16px;
     }
 
     .exp-item {
-      padding: 28px 32px;
-      position: relative;
+      padding: 24px;
     }
 
     .exp-header {
@@ -261,190 +383,186 @@
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 12px;
+      gap: 8px;
+      margin-bottom: 10px;
     }
 
     .exp-title h3 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
-      color: var(--text-main);
     }
 
     .exp-title .company {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--accent-sky);
-      margin-top: 2px;
     }
 
     .exp-meta {
       text-align: right;
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .exp-meta .location {
-      display: block;
       font-size: 12px;
-      opacity: 0.8;
+      color: var(--text-muted);
+      font-family: 'Fira Code', monospace;
     }
 
     .exp-body ul {
       list-style: none;
-      padding-left: 0;
     }
 
     .exp-body li {
       position: relative;
-      padding-left: 20px;
+      padding-left: 18px;
       color: var(--text-muted);
-      font-size: 14px;
-      margin-bottom: 8px;
-      line-height: 1.6;
+      font-size: 13px;
+      margin-bottom: 6px;
     }
 
     .exp-body li::before {
-      content: "•";
-      color: var(--accent);
+      content: "›";
+      color: var(--accent-sky);
       font-weight: bold;
-      font-size: 18px;
       position: absolute;
       left: 0;
-      top: -2px;
+      top: -1px;
     }
 
     .exp-tags {
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
     .exp-tags span {
-      background: rgba(59, 130, 246, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
       color: var(--accent-sky);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 8px;
+      font-size: 10px;
+      font-family: 'Fira Code', monospace;
+      padding: 2px 8px;
       border-radius: 4px;
     }
 
-    /* EDUCATION & CERTIFICATIONS GRID */
-    .edu-cert-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .list-card {
-      padding: 28px;
-    }
-
-    .list-card h3 {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .list-card h3 i {
-      color: var(--accent-sky);
-    }
-
-    .item-block {
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    .item-block:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    .item-block h4 {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .item-block p {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .item-block .date {
-      font-size: 12px;
-      color: var(--accent-sky);
-      font-weight: 600;
-    }
-
-    /* PROJECTS GRID */
-    .projects-grid {
+    /* RECOMMENDATIONS SECTION */
+    .recommendations-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .project-card {
-      overflow: hidden;
+    .recommendation-card {
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 24px;
+      position: relative;
     }
 
-    .project-card h3 {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 8px;
+    .quote-icon {
+      font-size: 24px;
+      color: var(--accent-sky);
+      opacity: 0.3;
+      margin-bottom: 12px;
     }
 
-    .project-card p {
+    .recommendation-text {
       font-size: 13px;
       color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
+      line-height: 1.7;
       margin-bottom: 20px;
     }
 
-    .tags span {
-      background: rgba(59, 130, 246, 0.1);
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--card-border);
+      padding-top: 16px;
+    }
+
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--card-border-hover);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--accent-sky);
-      font-size: 11px;
+      font-weight: 800;
+      font-size: 14px;
+      font-family: 'Fira Code', monospace;
+      flex-shrink: 0;
+    }
+
+    .author-details h4 {
+      font-size: 14px;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 6px;
+      color: var(--text-main);
+    }
+
+    .author-details p {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+
+    .relationship-tag {
+      display: inline-block;
+      font-size: 10px;
+      color: var(--accent-sky);
+      font-family: 'Fira Code', monospace;
+      margin-top: 4px;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .project-card {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .project-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
     }
 
     /* FOOTER */
     footer {
       border-top: 1px solid var(--card-border);
-      padding: 30px 0;
+      padding: 24px 0;
       text-align: center;
-      font-size: 14px;
+      font-size: 12px;
       color: var(--text-muted);
+      font-family: 'Fira Code', monospace;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .projects-grid, .edu-cert-grid {
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+      .hero-grid, .about-layout, .recommendations-grid, .projects-grid {
         grid-template-columns: 1fr;
       }
       .hero h1 {
-        font-size: 38px;
+        font-size: 34px;
+      }
+      .nav-links {
+        display: none;
       }
       .exp-header {
         flex-direction: column;
@@ -452,71 +570,130 @@
       .exp-meta {
         text-align: left;
       }
-      .nav-links {
-        display: none;
-      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container">
-      <a href="#home" class="logo">Kamran<span>.</span></a>
+      <a href="#home" class="logo">kz@backend:~$</a>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education & Certs</a></li>
+        <li><a href="#recommendations">Recommendations</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section id="home" class="hero">
     <div class="container">
-      <div class="hero-badge">
-        <i class="fa-solid fa-code"></i> PHP & Laravel Software Engineer
-      </div>
-      <h1>I build clean, scalable backend systems for <span>real enterprise workflows.</span></h1>
-      <p>Software Engineer with 2+ years of experience engineering ERP modules, SaaS platforms, REST APIs, Oracle SQL queries, and backend automation tools.</p>
-      
-      <div class="hero-btns">
-        <a href="#projects" class="btn btn-primary">
-          View Projects <i class="fa-solid fa-arrow-right"></i>
-        </a>
-        <a href="https://drive.google.com/file/d/1TVTjPkycOOyi2YWaFVpVwfn8D45DqTYY/view?usp=sharing" target="_blank" class="btn btn-secondary">
-          Download Resume <i class="fa-solid fa-download"></i>
-        </a>
+      <div class="hero-grid">
+        
+        <div>
+          <div class="hero-badge">
+            <i class="fa-solid fa-terminal"></i> Software Engineer
+          </div>
+          <h1>Architecting robust <span>PHP & Laravel</span> backends.</h1>
+          <p>Engineered core enterprise ERP systems, automated background jobs, RESTful APIs, and optimized database queries for production scale[cite: 1].</p>
+          
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-primary">
+              View Work <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://drive.google.com/file/d/1TVTjPkycOOyi2YWaFVpVwfn8D45DqTYY/view?usp=sharing" target="_blank" class="btn btn-secondary">
+              Resume <i class="fa-solid fa-download"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- TERMINAL MOCKUP -->
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span class="terminal-title">DeveloperProfile.php</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="code-keyword">namespace</span> App\Engineers;</p>
+            <br>
+            <p><span class="code-keyword">class</span> <span class="code-function">KamranZafar</span> <span class="code-keyword">extends</span> BackendDeveloper</p>
+            <p>{</p>
+            <p>&nbsp;&nbsp;<span class="code-keyword">public const</span> <span class="code-var">EXPERIENCE</span> = <span class="code-string">'2+ Years'</span>;[cite: 1]</p>
+            <p>&nbsp;&nbsp;<span class="code-keyword">public const</span> <span class="code-var">LOCATION</span> = <span class="code-string">'Lahore, PK'</span>;[cite: 1]</p>
+            <br>
+            <p>&nbsp;&nbsp;<span class="code-keyword">public function</span> <span class="code-function">getTechStack</span>(): <span class="code-keyword">array</span></p>
+            <p>&nbsp;&nbsp;{</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> [</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'PHP / Laravel'</span>,[cite: 1]</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'Oracle SQL / MySQL'</span>,[cite: 1]</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'REST API Architecture'</span>[cite: 1]</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;];</p>
+            <p>&nbsp;&nbsp;}</p>
+            <p>}</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT SECTION -->
   <section id="about" class="section">
     <div class="container">
-      <div class="glass-card about-card">
-        <div class="section-title" style="margin-bottom: 16px;">
-          <span>Overview</span>
-          <h2>About Me</h2>
+      <div class="section-title">
+        <span>// ABOUT ME</span>
+        <h2>Engineering Core Business Logic</h2>
+      </div>
+
+      <div class="about-layout">
+        
+        <div class="glass-card about-card-main">
+          <h3>Backend Specialist & System Builder</h3>
+          <p>Computer Science graduate with 2+ years of hands-on professional software engineering experience centered on core PHP, Laravel framework, multi-tenant databases, and custom ERP software modules[cite: 1].</p>
+          <p>Focused on shipping clean code, streamlining automated background tasks, minimizing database bottlenecks, and integrating reliable API contracts for web platforms[cite: 1].</p>
         </div>
-        <p>I am Kamran Zafar, a Computer Science graduate and Backend Engineer specializing in PHP, Laravel, ERP software, and REST APIs.</p>
-        <p>My work spans full lifecycle development: requirement gathering, multi-tenant DB modeling, building performant endpoints, writing automated background jobs, and handling production deployments.</p>
+
+        <div class="about-metrics">
+          <div class="glass-card metric-box">
+            <h4>2+ Yrs</h4>
+            <p>Production Experience[cite: 1]</p>
+          </div>
+          <div class="glass-card metric-box">
+            <h4>ERP Systems</h4>
+            <p>Enterprise Focus[cite: 1]</p>
+          </div>
+          <div class="glass-card metric-box">
+            <h4>REST APIs</h4>
+            <p>Scalable Endpoints[cite: 1]</p>
+          </div>
+          <div class="glass-card metric-box">
+            <h4>SQL Querying</h4>
+            <p>Oracle & MySQL Tuning[cite: 1]</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE (VERTICAL LIST) -->
+  <!-- EXPERIENCE SECTION -->
   <section id="experience" class="section">
     <div class="container">
       <div class="section-title">
-        <span>Career Timeline</span>
-        <h2>Work Experience</h2>
-        <p>Detailed history of backend engineering, system optimizations, and enterprise deliverables.</p>
+        <span>// WORK HISTORY</span>
+        <h2>Professional Journey</h2>
       </div>
 
       <div class="experience-list">
@@ -526,26 +703,22 @@
           <div class="exp-header">
             <div class="exp-title">
               <h3>PHP Developer</h3>
-              <div class="company">Coach Tribe LLC · Full-time</div>
+              <div class="company">Coach Tribe LLC · Full-time[cite: 1]</div>
             </div>
             <div class="exp-meta">
-              Mar 2026 – Aug 2026 · 6 mos
-              <span class="location">Wyoming, United States (Remote)</span>
+              Mar 2026 – Aug 2026[cite: 1]
+              <div>Wyoming, US (Remote)[cite: 1]</div>
             </div>
           </div>
           <div class="exp-body">
             <ul>
-              <li>Developed and tested scalable REST APIs for a US-based SaaS coaching platform.</li>
-              <li>Wrote automated background jobs for file cleanup, scheduled queues, and system maintenance.</li>
-              <li>Engineered email notification workflows and automated reminder queues.</li>
-              <li>Enhanced application performance and response times by collaborating with frontend developers to optimize database endpoints.</li>
+              <li>Developed and tested REST APIs, wrote automated background jobs for file cleanup, and implemented email notification templates[cite: 1].</li>
+              <li>Enhanced system performance and response times by delivering optimized backend endpoints[cite: 1].</li>
             </ul>
             <div class="exp-tags">
-              <span>PHP</span>
               <span>Laravel</span>
               <span>REST APIs</span>
-              <span>Background Jobs</span>
-              <span>SaaS</span>
+              <span>Queues</span>
             </div>
           </div>
         </div>
@@ -555,25 +728,24 @@
           <div class="exp-header">
             <div class="exp-title">
               <h3>PHP Developer</h3>
-              <div class="company">Cola Next / Mezan Beverages · Full-time</div>
+              <div class="company">Cola Next / Mezan Beverages · Full-time[cite: 1]</div>
             </div>
             <div class="exp-meta">
-              Jul 2025 – Jun 2026 · 1 yr
-              <span class="location">Lahore, Punjab, Pakistan (On-site)</span>
+              Jul 2025 – Jun 2026[cite: 1]
+              <div>Lahore, PK (On-site)[cite: 1]</div>
             </div>
           </div>
           <div class="exp-body">
             <ul>
-              <li>Developed enterprise ERP modules including custom forms, reporting tools, and automated backend workflows using Core PHP, Laravel, and Oracle SQL.</li>
-              <li>Built and maintained REST APIs in Laravel across full development lifecycles—from initial requirements to production support.</li>
-              <li>Optimized departmental workflows, drastically reducing manual data entry steps and improving operational accuracy.</li>
+              <li>Developed ERP modules including forms, reports, and backend workflows using Core PHP, Laravel, and Oracle SQL[cite: 1].</li>
+              <li>Built and maintained REST APIs in Laravel across full lifecycle deployment and production support[cite: 1].</li>
+              <li>Improved operational efficiency by optimizing workflows and saving processing time across departments[cite: 1].</li>
             </ul>
             <div class="exp-tags">
               <span>Core PHP</span>
               <span>Laravel</span>
               <span>Oracle SQL</span>
-              <span>ERP Systems</span>
-              <span>REST APIs</span>
+              <span>ERP</span>
             </div>
           </div>
         </div>
@@ -583,25 +755,22 @@
           <div class="exp-header">
             <div class="exp-title">
               <h3>PHP Developer</h3>
-              <div class="company">Brainine Solutions · Contract</div>
+              <div class="company">Brainine Solutions · Contract[cite: 1]</div>
             </div>
             <div class="exp-meta">
-              Jan 2025 – Jul 2025 · 7 mos
-              <span class="location">Lahore, Punjab, Pakistan (On-site)</span>
+              Jan 2025 – Jul 2025[cite: 1]
+              <div>Lahore, PK (On-site)[cite: 1]</div>
             </div>
           </div>
           <div class="exp-body">
             <ul>
-              <li>Engineered backend features for a Core PHP Point of Sale (POS) system, optimizing SQL queries for performance and accuracy.</li>
-              <li>Enhanced the interactive UI using AJAX, JavaScript, jQuery, and CSS3 for faster checkout processing.</li>
-              <li>Managed end-to-end deployments, server configuration, domain setups, and production hotfixes on hosting environments.</li>
+              <li>Worked on a Core PHP POS system, optimizing SQL queries, improving speed, and enhancing the UI using AJAX and JavaScript[cite: 1].</li>
+              <li>Managed server deployments on hosting environments alongside bug fixes and reliability monitoring[cite: 1].</li>
             </ul>
             <div class="exp-tags">
               <span>Core PHP</span>
               <span>MySQL</span>
               <span>AJAX</span>
-              <span>jQuery</span>
-              <span>POS Systems</span>
             </div>
           </div>
         </div>
@@ -610,49 +779,45 @@
         <div class="glass-card exp-item">
           <div class="exp-header">
             <div class="exp-title">
-              <h3>Web Development Intern (Backend)</h3>
-              <div class="company">CAT Marketing Systems · Full-time</div>
+              <h3>Web Development Intern</h3>
+              <div class="company">CAT Marketing Systems · Full-time[cite: 1]</div>
             </div>
             <div class="exp-meta">
-              Jul 2024 – Dec 2024 · 6 mos
-              <span class="location">Lahore, Punjab, Pakistan (On-site)</span>
+              Jul 2024 – Dec 2024[cite: 1]
+              <div>Lahore, PK (On-site)[cite: 1]</div>
             </div>
           </div>
           <div class="exp-body">
             <ul>
-              <li>Built a custom Warehouse Management System (WMS) from scratch using Core PHP after gathering client operational requirements.</li>
-              <li>Designed multi-tenant database schemas, rack tracking, stock movements, and barcode scanning modules.</li>
-              <li>Maintained clean, modular code architecture ensuring long-term system stability and performance.</li>
+              <li>Built a Warehouse Management System in Core PHP from scratch by collecting requirements from clients and designing core modules end-to-end[cite: 1].</li>
             </ul>
             <div class="exp-tags">
               <span>Core PHP</span>
               <span>MySQL</span>
               <span>WMS</span>
-              <span>Database Architecture</span>
             </div>
           </div>
         </div>
 
-        <!-- Destiny Marketing (Minimized WP Focus) -->
+        <!-- Destiny Marketing -->
         <div class="glass-card exp-item">
           <div class="exp-header">
             <div class="exp-title">
               <h3>WordPress Developer</h3>
-              <div class="company">Destiny Marketing · Part-time</div>
+              <div class="company">Destiny Marketing · Part-time[cite: 1]</div>
             </div>
             <div class="exp-meta">
-              Mar 2025 – May 2025 · 3 mos
-              <span class="location">Lahore, Punjab, Pakistan (Remote)</span>
+              Mar 2025 – May 2025[cite: 1]
+              <div>Remote[cite: 1]</div>
             </div>
           </div>
           <div class="exp-body">
             <ul>
-              <li>Customized site interfaces, integrated USPS live shipping rates, setup Stripe payment integrations, resolved technical bugs, and optimized site loading speed.</li>
+              <li>Configured USPS shipping rates, integrated Stripe payment solutions, and optimized site speed[cite: 1].</li>
             </ul>
             <div class="exp-tags">
               <span>WordPress</span>
               <span>Stripe API</span>
-              <span>USPS API</span>
             </div>
           </div>
         </div>
@@ -661,47 +826,68 @@
     </div>
   </section>
 
-  <!-- EDUCATION & CERTIFICATIONS -->
-  <section id="education" class="section">
+  <!-- RECOMMENDATIONS SECTION -->
+  <section id="recommendations" class="section">
     <div class="container">
       <div class="section-title">
-        <span>Qualifications</span>
-        <h2>Education & Certifications</h2>
+        <span>// TESTIMONIALS</span>
+        <h2>LinkedIn Recommendations</h2>
+        <p>Endorsements from engineering leaders, managers, and former colleagues.</p>
       </div>
 
-      <div class="edu-cert-grid">
-        
-        <!-- Education -->
-        <div class="glass-card list-card">
-          <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-          
-          <div class="item-block">
-            <h4>BS Computer Science</h4>
-            <p>University of Okara</p>
-            <div class="date">May 2020 – Jul 2024 · Grade A</div>
-          </div>
+      <div class="recommendations-grid">
 
-          <div class="item-block">
-            <h4>ICS (Computer Science)</h4>
-            <p>Govt Associate College</p>
-            <div class="date">Mar 2019 – Mar 2020 · Grade A</div>
+        <!-- Chiraz Bensemmane -->
+        <div class="glass-card recommendation-card">
+          <div>
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p class="recommendation-text">
+              "Kamran has been working at Coach Tribe for quite some time and is a great addition to the team. He is a very diligent Backend Developer specializing in PHP and Laravel. As our team is 100% remote, Kamran has developed great communication skills and engages actively in team meetings. He manages his tasks independently and works effectively. I recommend Kamran for backend roles requiring a reliable developer with a strong work ethic."
+            </p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">CB</div>
+            <div class="author-details">
+              <h4>Chiraz Bensemmane</h4>
+              <p>Founder & CEO at Coach Tribe & Pitch World Fast</p>
+              <span class="relationship-tag">Managed Kamran directly</span>
+            </div>
           </div>
         </div>
 
-        <!-- Certifications -->
-        <div class="glass-card list-card">
-          <h3><i class="fa-solid fa-certificate"></i> Certifications</h3>
-          
-          <div class="item-block">
-            <h4>Master Full-Stack Web Development with Laravel & PHP</h4>
-            <p>Board Infinity · Credential ID: 68E7IOD9YOU3</p>
-            <div class="date">Issued Dec 2025</div>
+        <!-- Imran Ahsanullah -->
+        <div class="glass-card recommendation-card">
+          <div>
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p class="recommendation-text">
+              "I had the privilege of working with Kamran for more than two years. He consistently proved himself to be an exceptional Software Engineer with strong technical expertise, dedication, and a results-oriented mindset. Kamran played a significant role in delivering business-critical ERP applications. His expertise in system design, troubleshooting, and performance optimization enabled our team to deliver reliable solutions."
+            </p>
           </div>
+          <div class="author-info">
+            <div class="author-avatar">IA</div>
+            <div class="author-details">
+              <h4>Imran Ahsanullah</h4>
+              <p>Senior MIS Manager & ERP Consultant</p>
+              <span class="relationship-tag">Managed Kamran directly</span>
+            </div>
+          </div>
+        </div>
 
-          <div class="item-block">
-            <h4>Technical Support Fundamentals</h4>
-            <p>Coursera · Credential ID: HVEJVW7ZV343</p>
-            <div class="date">Issued Feb 2023</div>
+        <!-- Ehsan ul Khaliq -->
+        <div class="glass-card recommendation-card">
+          <div>
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p class="recommendation-text">
+              "I wholeheartedly recommend Kamran Zafar for his exceptional skills in JavaScript, PHP, and software engineering. His technical expertise has been invaluable in our collaborative projects, and I am confident he would be a significant asset to any team or engineering project."
+            </p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">EK</div>
+            <div class="author-details">
+              <h4>Ehsan ul Khaliq</h4>
+              <p>Software Design Engineer @ TeReSol</p>
+              <span class="relationship-tag">Studied together & Collaborated</span>
+            </div>
           </div>
         </div>
 
@@ -709,11 +895,11 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS SECTION -->
   <section id="projects" class="section">
     <div class="container">
       <div class="section-title">
-        <span>Portfolio</span>
+        <span>// PORTFOLIO</span>
         <h2>Selected Projects</h2>
       </div>
 
@@ -722,44 +908,29 @@
         <div class="glass-card project-card">
           <div>
             <h3>Enterprise ERP Solutions</h3>
-            <p>Scalable ERP system built to streamline distribution pipelines, sales tracking, multi-department reports, and stock management.</p>
-            <div class="tags">
-              <span>Laravel</span>
-              <span>Oracle SQL</span>
-              <span>Core PHP</span>
-            </div>
+            <p>ERP suite for distribution, sales, reports, and stock management[cite: 1].</p>
           </div>
-          <a href="https://app.oradigitals.com" target="_blank" class="btn btn-secondary" style="justify-content: center;">
-            View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <a href="https://app.oradigitals.com" target="_blank" class="btn btn-secondary">
+            View <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
 
         <div class="glass-card project-card">
           <div>
-            <h3>Warehouse Management (WMS)</h3>
-            <p>Complete multi-branch inventory tracking tool featuring automated rack assignments, stock movements, and barcode generation.</p>
-            <div class="tags">
-              <span>Core PHP</span>
-              <span>MySQL</span>
-              <span>AJAX</span>
-            </div>
+            <h3>Warehouse Management</h3>
+            <p>Multi-branch inventory tool with racks tracking and barcode scanning[cite: 1].</p>
           </div>
-          <a href="https://github.com/kamranzafar4343/Warehouse-Management-System" target="_blank" class="btn btn-secondary" style="justify-content: center;">
-            GitHub Repo <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/kamranzafar4343/Warehouse-Management-System" target="_blank" class="btn btn-secondary">
+            GitHub <i class="fa-brands fa-github"></i>
           </a>
         </div>
 
         <div class="glass-card project-card">
           <div>
-            <h3>AI Article Summarizer</h3>
-            <p>API-driven web utility designed to process long-form articles into quick, executive summaries.</p>
-            <div class="tags">
-              <span>JavaScript</span>
-              <span>REST API</span>
-              <span>Netlify</span>
-            </div>
+            <h3>AI Summarizer</h3>
+            <p>API utility generating quick summaries for long-form articles[cite: 1].</p>
           </div>
-          <a href="https://openai-gpt4model-article-summarizer.netlify.app/" target="_blank" class="btn btn-secondary" style="justify-content: center;">
+          <a href="https://openai-gpt4model-article-summarizer.netlify.app/" target="_blank" class="btn btn-secondary">
             Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
@@ -770,16 +941,16 @@
 
   <!-- CONTACT -->
   <section id="contact" class="section">
-    <div class="container text-center" style="text-align: center;">
-      <div class="section-title" style="margin-bottom: 24px;">
-        <span>Contact</span>
-        <h2>Let's Work Together</h2>
-        <p style="margin: 8px auto 0;">Open to backend software engineering, PHP/Laravel projects, and international remote roles.</p>
+    <div class="container" style="text-align: center;">
+      <div class="section-title">
+        <span>// CONTACT</span>
+        <h2>Let's Connect</h2>
+        <p style="margin: 8px auto 0;">Open to software engineering roles, backend development, and remote opportunities[cite: 1].</p>
       </div>
 
-      <div class="hero-btns" style="justify-content: center; margin-top: 24px;">
+      <div class="hero-btns" style="justify-content: center; margin-top: 20px;">
         <a href="mailto:kamranzafar4343@gmail.com" class="btn btn-primary">
-          Get In Touch <i class="fa-solid fa-envelope"></i>
+          Email Me <i class="fa-solid fa-envelope"></i>
         </a>
         <a href="https://www.linkedin.com/in/kamranzafar4343/" target="_blank" class="btn btn-secondary">
           LinkedIn <i class="fa-brands fa-linkedin"></i>
@@ -790,9 +961,28 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Kamran Zafar. Engineered for performance.</p>
+      <p>© 2026 Kamran Zafar. Engineered for performant backends[cite: 1].</p>
     </div>
   </footer>
+
+  <!-- CURSOR INTERACTION SCRIPT -->
+  <script>
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    window.addEventListener('mousemove', (e) => {
+      const posX = e.clientX;
+      const posY = e.clientY;
+
+      cursorDot.style.left = `${posX}px`;
+      cursorDot.style.top = `${posY}px`;
+
+      cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+      }, { duration: 500, fill: "forwards" });
+    });
+  </script>
 
 </body>
 </html>
