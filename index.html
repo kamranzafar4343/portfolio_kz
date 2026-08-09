@@ -124,7 +124,7 @@
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
       list-style: none;
       font-size: 13px;
       font-weight: 700;
@@ -242,7 +242,7 @@
       padding: 14px 20px;
     }
 
-    /* MINIMAL VISUAL CANVAS (MATCHING REFERENCE DESIGN) */
+    /* MINIMAL HERO VISUAL CANVAS */
     .hero-canvas-container {
       position: relative;
       height: 320px;
@@ -308,7 +308,6 @@
       color: var(--text-main);
     }
 
-    /* NODE POSITIONS */
     .node-top-left { top: 20px; left: 10px; }
     .node-top-right { top: 20px; right: 10px; }
     .node-bottom-left { bottom: 20px; left: 10px; }
@@ -386,6 +385,121 @@
 
     .domain-card h4 { font-size: 15px; font-weight: 800; margin-bottom: 6px; }
     .domain-card p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    /* SERVICES SECTION (NEW) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .service-card i {
+      font-size: 22px;
+      color: var(--btn-green);
+      margin-bottom: 12px;
+    }
+
+    .service-card h4 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .service-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .services-summary {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .summary-text h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .summary-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .metric-box {
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+
+    .metric-box h4 {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--btn-green);
+    }
+
+    .metric-box p {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    /* WHY HIRE ME SECTION (NEW) */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 80px;
+    }
+
+    .why-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+    }
+
+    .why-card i {
+      font-size: 24px;
+      color: var(--btn-green);
+      margin-bottom: 12px;
+    }
+
+    .why-card h4 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .why-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
 
     /* EXPERIENCE TIMELINE */
     .exp-section { margin-bottom: 80px; }
@@ -647,7 +761,7 @@
     }
 
     @media (max-width: 992px) {
-      .hero-grid, .projects-grid, .testimonials-grid, .domains-grid { grid-template-columns: 1fr; }
+      .hero-grid, .projects-grid, .testimonials-grid, .domains-grid, .services-grid, .why-grid, .services-summary { grid-template-columns: 1fr; }
       .tech-grid { grid-template-columns: repeat(2, 1fr); }
       .hero-title { font-size: 40px; }
       .form-grid { grid-template-columns: 1fr; }
@@ -676,9 +790,10 @@
       <div class="logo-badge">KZ.</div>
       <ul class="nav-links">
         <li><a href="#stack">Stack</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-me">Why Hire Me</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="https://wa.me/923184090843" target="_blank" class="btn-talk"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
@@ -814,11 +929,103 @@
       </div>
     </section>
 
-    <!-- WORK EXPERIENCE (INCLUDING DESTINY MARKETING) -->
+    <!-- NEW SECTION 03: SERVICES -->
+    <section id="services">
+      <div class="section-num">03 / SERVICES</div>
+      <h2 class="section-title">How I deliver value</h2>
+      <p class="section-subtitle">From initial concept to deployed product, I focus on systems that are fast, reliable, and easy to maintain.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fa-solid fa-laptop-code"></i>
+          <h4>Full-Stack Web Apps</h4>
+          <p>End-to-end product delivery with Laravel, Core PHP, JavaScript, and MySQL. Clean architecture, secure APIs, and responsive interfaces.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-database"></i>
+          <h4>Backend & Database Systems</h4>
+          <p>Relational data modeling, RESTful API design, and backend infrastructure with MySQL, Oracle SQL, and Amazon S3 integrations.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-brands fa-wordpress"></i>
+          <h4>WordPress & Custom Plugins</h4>
+          <p>Custom plugin engineering, theme modifications, WP REST API integrations, WooCommerce setups, and payment gateway hookup.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-server"></i>
+          <h4>DevOps & Server Deployment</h4>
+          <p>VPS management, cPanel setup, SSL, DNS configurations, automated backups, and CI/CD workflows using GitHub Actions.</p>
+        </div>
+      </div>
+
+      <div class="services-summary">
+        <div class="summary-text">
+          <h3>Full-stack delivery, start to finish</h3>
+          <p>I partner with founders and engineering teams to translate complex requirements into clean, performant software. Whether you need a customer-facing web app, a solid backend, or a custom plugin layer, I build it with precision.</p>
+        </div>
+
+        <div class="metrics-row">
+          <div class="metric-box">
+            <h4>10+</h4>
+            <p>Projects Delivered</p>
+          </div>
+          <div class="metric-box">
+            <h4>2+</h4>
+            <p>Years Coding</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW SECTION 04: WHY HIRE ME -->
+    <section id="why-me">
+      <div class="section-num">04 / WHY HIRE ME</div>
+      <h2 class="section-title">Your All-In-One Developer</h2>
+      <p class="section-subtitle">A disciplined, transparent engineer dedicated to delivering clean code and real business outcomes.</p>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <i class="fa-solid fa-clock"></i>
+          <h4>On-Time & Disciplined</h4>
+          <p>I strictly respect project milestones, daily updates, and deadline commitments. Flexible to work across US, UK, and Europe time zones.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-handshake"></i>
+          <h4>Honest & Transparent</h4>
+          <p>Clear progress reporting, direct communication, and no hidden fluff. You see exact updates and code commits as the work progresses.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-shield-cat"></i>
+          <h4>5-15 Days Risk-Free Trial</h4>
+          <p>I offer a 5 to 15-day risk-free trial period with zero upfront cost. Test my work ethic, communication, and code quality before committing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
     <section id="experience" class="exp-section">
-      <div class="section-num">03 / EXPERIENCE</div>
+      <div class="section-num">05 / EXPERIENCE</div>
       <h2 class="section-title">2 Years Work Experience</h2>
-      <p class="section-subtitle">Software development experience across corporate and remote agency settings.</p>
+      <p class="section-subtitle">Software development experience across corporate, software house, and remote SaaS environments.</p>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-title">
+            <h4>Remote Laravel Backend Developer</h4>
+            <div class="exp-company">CoachTribe · Remote International SaaS</div>
+          </div>
+          <div class="exp-date">SaaS Project Experience</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Engineered backend micro-features, RESTful APIs, and system logic using Laravel, PHP 8+, and MySQL for an international remote coaching platform.</li>
+          <li>Implemented automated background queues, scheduled cron jobs, email dispatchers, and third-party API integrations under MVC architecture.</li>
+        </ul>
+      </div>
 
       <div class="exp-card">
         <div class="exp-header">
@@ -878,7 +1085,7 @@
 
     <!-- FEATURED PROJECTS -->
     <section id="projects" class="projects-section">
-      <div class="section-num">04 / SELECTED PROJECTS</div>
+      <div class="section-num">06 / SELECTED PROJECTS</div>
       <h2 class="section-title">Featured Work</h2>
       <p class="section-subtitle">A collection of web applications and custom software.</p>
 
@@ -961,7 +1168,7 @@
 
     <!-- TESTIMONIALS SECTION -->
     <section id="testimonials" class="testimonials-section">
-      <div class="section-num">05 / TESTIMONIALS</div>
+      <div class="section-num">07 / TESTIMONIALS</div>
       <h2 class="section-title">What People Say</h2>
       <p class="section-subtitle">Recommendations from managers, founders, and engineering peers.</p>
 
@@ -1003,7 +1210,7 @@
 
     <!-- CONTACT FORM -->
     <section id="contact" class="contact-card">
-      <div class="section-num">06 / CONTACT</div>
+      <div class="section-num">08 / CONTACT</div>
       <h2 class="section-title">Let's build something together</h2>
       <p class="section-subtitle">Send me a message directly or chat on WhatsApp. Includes a 5–15 Day Risk-Free Trial Period.</p>
 
