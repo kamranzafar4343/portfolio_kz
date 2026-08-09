@@ -759,6 +759,122 @@
       font-size: 12px;
       color: var(--text-muted);
     }
+    /* HERO CANVAS ANIMATIONS */
+    .hero-canvas-container {
+      position: relative;
+      height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .core-hub {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      position: relative;
+      animation: corePulse 3s ease-in-out infinite alternate;
+    }
+
+    .core-hub i {
+      font-size: 22px;
+      color: var(--btn-green);
+      margin-bottom: 4px;
+    }
+
+    .core-hub span {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text-main);
+    }
+
+    .floating-node {
+      position: absolute;
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+
+    .floating-node:hover {
+      border-color: var(--btn-green);
+      box-shadow: 0 14px 30px rgba(27, 59, 43, 0.12);
+      animation-play-state: paused;
+    }
+
+    .floating-node i {
+      font-size: 22px;
+      color: var(--btn-green);
+    }
+
+    .node-text strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    /* NODE POSITIONS & INDIVIDUAL FLOAT ANIMATIONS */
+    .node-top-left {
+      top: 20px;
+      left: 10px;
+      animation: floatSmooth 4.5s ease-in-out infinite alternate;
+    }
+
+    .node-top-right {
+      top: 20px;
+      right: 10px;
+      animation: floatSmooth 5.2s ease-in-out 0.5s infinite alternate;
+    }
+
+    .node-bottom-left {
+      bottom: 20px;
+      left: 10px;
+      animation: floatSmooth 4.8s ease-in-out 1s infinite alternate;
+    }
+
+    .node-bottom-right {
+      bottom: 20px;
+      right: 10px;
+      animation: floatSmooth 5.5s ease-in-out 1.5s infinite alternate;
+    }
+
+    /* KEYFRAME ANIMATIONS */
+    @keyframes floatSmooth {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(0.8deg);
+      }
+      100% {
+        transform: translateY(6px) rotate(-0.5deg);
+      }
+    }
+
+    @keyframes corePulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(27, 59, 43, 0.15), 0 10px 30px rgba(0,0,0,0.06);
+      }
+      100% {
+        box-shadow: 0 0 0 20px rgba(27, 59, 43, 0), 0 10px 30px rgba(0,0,0,0.06);
+      }
+    }
 
     @media (max-width: 992px) {
       .hero-grid, .projects-grid, .testimonials-grid, .domains-grid, .services-grid, .why-grid, .services-summary { grid-template-columns: 1fr; }
@@ -1325,3 +1441,26 @@
 
 </body>
 </html>
+<script>
+  const heroContainer = document.querySelector('.hero-canvas-container');
+  const floatNodes = document.querySelectorAll('.floating-node');
+
+  if (heroContainer && floatNodes.length) {
+    heroContainer.addEventListener('mousemove', (e) => {
+      const rect = heroContainer.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      floatNodes.forEach((node, index) => {
+        const speed = (index + 1) * 0.015;
+        node.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+      });
+    });
+
+    heroContainer.addEventListener('mouseleave', () => {
+      floatNodes.forEach((node) => {
+        node.style.transform = '';
+      });
+    });
+  }
+</script>
