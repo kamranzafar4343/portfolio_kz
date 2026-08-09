@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kamran Zafar | Backend & Full-Stack PHP Developer</title>
+  <title>Kamran Zafar | Full Stack PHP & Laravel Developer</title>
   
   <!-- Inter & Plus Jakarta Sans Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,12 +28,58 @@
       --radius-lg: 24px;
       --radius-md: 16px;
       --radius-sm: 12px;
+      --whatsapp-green: #25D366;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    /* CUSTOM ANIMATED CURSOR */
+    @media (min-width: 993px) {
+      body {
+        cursor: none;
+      }
+      a, button, input, textarea {
+        cursor: none;
+      }
+    }
+
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--btn-green);
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease;
+    }
+
+    .cursor-outline {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--btn-green);
+      position: fixed;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, top 0.12s ease-out, left 0.12s ease-out;
+    }
+
+    body.cursor-hover .cursor-outline {
+      width: 50px;
+      height: 50px;
+      background: rgba(27, 59, 43, 0.08);
+      border-color: var(--btn-green);
     }
 
     html {
@@ -114,7 +160,7 @@
 
     /* HERO */
     .hero {
-      padding: 60px 0 100px;
+      padding: 60px 0 80px;
     }
 
     .status-pill {
@@ -145,7 +191,7 @@
     }
 
     .hero h1 {
-      font-size: 56px;
+      font-size: 52px;
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -2px;
@@ -154,17 +200,32 @@
     }
 
     .hero p {
-      font-size: 18px;
+      font-size: 17px;
       color: var(--text-muted);
       line-height: 1.6;
       max-width: 580px;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
+    }
+
+    .trial-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--btn-green);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
     }
 
     .hero-actions {
       display: flex;
       gap: 16px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .btn-main {
@@ -205,31 +266,31 @@
     .arch-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 16px;
     }
 
     .arch-node {
       background: var(--bg);
       border: 1px solid var(--card-border);
-      padding: 14px;
+      padding: 12px;
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .arch-node i {
-      font-size: 20px;
+      font-size: 18px;
       color: var(--btn-green);
     }
 
     .arch-node strong {
       display: block;
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .arch-node span {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-muted);
     }
 
@@ -237,7 +298,7 @@
       grid-column: span 2;
       background: var(--btn-green);
       color: #fff;
-      padding: 16px;
+      padding: 14px;
       border-radius: var(--radius-sm);
       text-align: center;
     }
@@ -253,14 +314,14 @@
     }
 
     .section-title {
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 800;
       letter-spacing: -1px;
       margin-bottom: 12px;
     }
 
     .section-subtitle {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-muted);
       margin-bottom: 40px;
     }
@@ -270,14 +331,14 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 16px;
-      margin-bottom: 100px;
+      margin-bottom: 80px;
     }
 
     .tech-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-md);
-      padding: 24px;
+      padding: 20px;
       text-align: center;
       transition: transform 0.2s;
     }
@@ -287,31 +348,107 @@
     }
 
     .tech-card i {
-      font-size: 28px;
-      margin-bottom: 12px;
+      font-size: 26px;
+      margin-bottom: 10px;
       color: var(--btn-green);
     }
 
     .tech-card h4 {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       margin-bottom: 4px;
     }
 
     .tech-card p {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* DOMAINS GRID */
+    .domains-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 80px;
+    }
+
+    .domain-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .domain-card h4 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .domain-card p {
       font-size: 12px;
       color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* EXPERIENCE TIMELINE */
+    .exp-section {
+      margin-bottom: 80px;
+    }
+
+    .exp-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .exp-title h4 {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .exp-company {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--btn-green);
+    }
+
+    .exp-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-bullets {
+      padding-left: 18px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .exp-bullets li {
+      margin-bottom: 6px;
     }
 
     /* PROJECTS GRID */
     .projects-section {
-      margin-bottom: 100px;
+      margin-bottom: 80px;
     }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      gap: 24px;
     }
 
     .project-card {
@@ -326,9 +463,9 @@
 
     .project-img-wrapper {
       background: var(--bg);
-      padding: 24px;
+      padding: 20px;
       border-bottom: 1px solid var(--card-border);
-      height: 260px;
+      height: 220px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -341,63 +478,48 @@
       object-fit: cover;
       border-radius: var(--radius-sm);
       border: 1px solid var(--card-border);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     }
 
     .project-body {
-      padding: 28px;
+      padding: 24px;
     }
 
     .project-tags {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .project-tag {
       background: var(--tag-bg);
       color: var(--tag-text);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      padding: 4px 12px;
+      padding: 3px 10px;
       border-radius: 999px;
     }
 
     .project-title {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 800;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .project-desc {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
     }
 
     .btn-project {
       background: var(--btn-green);
       color: #fff;
-      padding: 10px 18px;
+      padding: 8px 16px;
       border-radius: 999px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn-project-text {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-main);
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -405,43 +527,43 @@
 
     /* TESTIMONIALS SECTION */
     .testimonials-section {
-      margin-bottom: 100px;
+      margin-bottom: 80px;
     }
 
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 16px;
     }
 
     .testimonial-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-md);
-      padding: 28px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
     .testimonial-quote {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-main);
-      line-height: 1.7;
-      margin-bottom: 24px;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
     .testimonial-author {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       border-top: 1px solid var(--card-border);
-      padding-top: 16px;
+      padding-top: 14px;
     }
 
     .author-avatar {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--btn-green);
       color: #fff;
@@ -449,53 +571,25 @@
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .author-info h5 {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
     }
 
     .author-info p {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-muted);
     }
 
-    /* SERVICES & METRICS */
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 100px;
-    }
-
-    .metric-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      padding: 24px;
-    }
-
-    .metric-card h3 {
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--text-main);
-      margin-bottom: 4px;
-    }
-
-    .metric-card p {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    /* CONTACT FORM */
+    /* CONTACT SECTION */
     .contact-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-lg);
-      padding: 48px;
+      padding: 40px;
       text-align: center;
       max-width: 800px;
       margin: 0 auto;
@@ -504,8 +598,8 @@
     .form-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin: 32px 0 16px;
+      gap: 14px;
+      margin: 24px 0 18px;
     }
 
     .form-input, .form-textarea {
@@ -513,16 +607,16 @@
       background: var(--bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-sm);
-      padding: 14px 18px;
+      padding: 12px 16px;
       font-family: inherit;
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-main);
       outline: none;
     }
 
     .form-textarea {
       grid-column: span 2;
-      height: 120px;
+      height: 110px;
       resize: none;
     }
 
@@ -530,24 +624,92 @@
       border-color: var(--btn-green);
     }
 
+    .direct-contacts {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-wa-direct {
+      background: #25D366;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-email-direct {
+      background: var(--pill-bg);
+      color: var(--text-main);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* FLOATING WHATSAPP BUTTON */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      background-color: var(--whatsapp-green);
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-pulse {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: var(--whatsapp-green);
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: pulse 2s infinite;
+      z-index: -1;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
-      padding-top: 60px;
-      font-size: 13px;
+      padding-top: 50px;
+      font-size: 12px;
       color: var(--text-muted);
     }
 
     /* RESPONSIVE */
     @media (max-width: 992px) {
-      .hero-grid, .projects-grid, .testimonials-grid, .metrics-grid {
+      .hero-grid, .projects-grid, .testimonials-grid, .domains-grid {
         grid-template-columns: 1fr;
       }
       .tech-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .hero h1 {
-        font-size: 40px;
+        font-size: 38px;
       }
       .form-grid {
         grid-template-columns: 1fr;
@@ -560,17 +722,28 @@
 </head>
 <body>
 
+  <!-- ANIMATED CURSOR ELEMENTS -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/923184090843?text=Hi%20Kamran,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <div class="whatsapp-pulse"></div>
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-wrapper">
       <div class="logo-badge">KZ.</div>
       <ul class="nav-links">
         <li><a href="#stack">Stack</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="mailto:kamranzafar4343@gmail.com" class="btn-talk">Let's talk</a>
+      <a href="https://wa.me/923184090843" target="_blank" class="btn-talk"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
     </div>
   </nav>
 
@@ -581,12 +754,17 @@
       <div class="hero-grid">
         <div>
           <div class="status-pill">
-            <div class="status-dot"></div> Available for new projects
+            <div class="status-dot"></div> Available for PHP / Laravel & WordPress Roles
           </div>
-          <h1>Backend & Full-Stack PHP Developer</h1>
-          <p>I build high-performance web applications with PHP, Laravel, and MySQL, alongside custom WordPress plugins and REST API integrations.</p>
+          <h1>Full Stack Web Developer</h1>
+          <p>I build web applications with PHP, Laravel, WordPress, and MySQL. Experienced in REST APIs, cPanel, VPS server setups, and e-commerce integrations[cite: 1]. Easily adaptable to US, UK, and European time zones[cite: 1].</p>
+          
+          <div class="trial-box">
+            <i class="fa-solid fa-shield-halved"></i> 5 to 15 Days Risk-Free Trial Period (0 Cost upfront)[cite: 1]
+          </div>
+
           <div class="hero-actions">
-            <a href="#projects" class="btn-main">View selected work <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://wa.me/923184090843" target="_blank" class="btn-main"><i class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
             <a href="https://drive.google.com/file/d/1TVTjPkycOOyi2YWaFVpVwfn8D45DqTYY/view?usp=sharing" target="_blank" class="btn-text">Resume</a>
           </div>
         </div>
@@ -598,32 +776,32 @@
               <i class="fa-brands fa-laravel"></i>
               <div>
                 <strong>Laravel Framework</strong>
-                <span>MVC Engine</span>
+                <span>Backend Architecture</span>[cite: 1]
               </div>
             </div>
             <div class="arch-node">
               <i class="fa-brands fa-wordpress"></i>
               <div>
                 <strong>WordPress Core</strong>
-                <span>Plugins & Hooks</span>
+                <span>Plugins & WooCommerce</span>[cite: 1]
               </div>
             </div>
             <div class="arch-center">
-              <strong>Core REST APIs</strong>
-              <span style="font-size: 11px; opacity: 0.9;">System Backend</span>
-            </div>
-            <div class="arch-node">
-              <i class="fa-solid fa-database"></i>
-              <div>
-                <strong>MySQL / Oracle SQL</strong>
-                <span>Database Layer</span>
-              </div>
+              <strong>REST API & SQL Pipelines</strong>
+              <span style="font-size: 10px; opacity: 0.9;">MySQL & Oracle SQL</span>[cite: 1]
             </div>
             <div class="arch-node">
               <i class="fa-brands fa-js"></i>
               <div>
-                <strong>AJAX & JS</strong>
-                <span>Frontend Logic</span>
+                <strong>JavaScript / AJAX</strong>
+                <span>Dynamic Frontend</span>[cite: 1]
+              </div>
+            </div>
+            <div class="arch-node">
+              <i class="fa-solid fa-server"></i>
+              <div>
+                <strong>VPS & cPanel</strong>
+                <span>CI/CD & Deployments</span>[cite: 1]
               </div>
             </div>
           </div>
@@ -634,62 +812,130 @@
     <!-- TECH STACK -->
     <section id="stack">
       <div class="section-num">01 / CORE STACK</div>
-      <h2 class="section-title">Technologies I use to ship production-grade systems</h2>
-      <p class="section-subtitle">Proven web technologies for scalable backends, APIs, and business software.</p>
+      <h2 class="section-title">Technologies & Tools</h2>
+      <p class="section-subtitle">Proven tech stack for backends, custom plugins, web applications, and server ops[cite: 1].</p>
 
       <div class="tech-grid">
         <div class="tech-card">
           <i class="fa-brands fa-php"></i>
           <h4>PHP</h4>
-          <p>Core & OOP</p>
+          <p>Core & OOP</p>[cite: 1]
         </div>
         <div class="tech-card">
           <i class="fa-brands fa-laravel"></i>
           <h4>Laravel</h4>
-          <p>Backend Framework</p>
+          <p>Eloquent, Sanctum, Queues</p>[cite: 1]
         </div>
         <div class="tech-card">
           <i class="fa-brands fa-wordpress"></i>
           <h4>WordPress</h4>
-          <p>Custom Plugins</p>
+          <p>Custom Plugins & Themes</p>[cite: 1]
         </div>
         <div class="tech-card">
           <i class="fa-solid fa-database"></i>
-          <h4>MySQL</h4>
-          <p>Database</p>
+          <h4>Databases</h4>
+          <p>MySQL, Oracle SQL, S3</p>[cite: 1]
         </div>
         <div class="tech-card">
-          <i class="fa-solid fa-server"></i>
-          <h4>REST APIs</h4>
-          <p>Integrations</p>
+          <i class="fa-solid fa-network-wired"></i>
+          <h4>DevOps & Tools</h4>
+          <p>Git, Postman, VPS, CI/CD</p>[cite: 1]
         </div>
+      </div>
+    </section>
+
+    <!-- DOMAIN EXPERIENCE -->
+    <section>
+      <div class="section-num">02 / DOMAINS</div>
+      <h2 class="section-title">Industries & Workflows</h2>
+      <p class="section-subtitle">Hands-on experience delivering specialized software across diverse verticals[cite: 1].</p>
+
+      <div class="domains-grid">
+        <div class="domain-card">
+          <h4>FMCG & Enterprise ERP</h4>
+          <p>Distribution workflows, inventory modules, sales tracking, and operational reports (Mezan Beverages / Cola Next)[cite: 1].</p>
+        </div>
+        <div class="domain-card">
+          <h4>SaaS & Remote Platforms</h4>
+          <p>REST API micro-features, automated queues, email dispatches, and scheduled jobs (CoachTribe)[cite: 1].</p>
+        </div>
+        <div class="domain-card">
+          <h4>POS & Warehouse (WMS)</h4>
+          <p>Multi-branch inventory, rack allocations, stock movements, and barcode handling modules[cite: 1].</p>
+        </div>
+        <div class="domain-card">
+          <h4>School Management Systems</h4>
+          <p>Student portals, fee management pipelines, attendance tracking, and role-based access control[cite: 1].</p>
+        </div>
+        <div class="domain-card">
+          <h4>E-Commerce & Retail</h4>
+          <p>WooCommerce customizations, payment gateways (Stripe), live shipping rates (USPS), and store optimization[cite: 1].</p>
+        </div>
+        <div class="domain-card">
+          <h4>Niche Service Businesses</h4>
+          <p>Lead generation plugins, appointment workflows, and landing pages for roofing, plumbing, and service platforms[cite: 1].</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE (1 YEAR / 2 COMPANIES) -->
+    <section id="experience" class="exp-section">
+      <div class="section-num">03 / EXPERIENCE</div>
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-subtitle">Hands-on software development across enterprise and software house teams[cite: 1].</p>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-title">
+            <h4>PHP / Laravel Developer</h4>
+            <div class="exp-company">Cola Next / Mezan Beverages · Full-time[cite: 1]</div>
+          </div>
+          <div class="exp-date">Jul 2025 – Jun 2026 · Lahore, PK[cite: 1]</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Developed ERP modules, backend forms, reports, and REST APIs using Core PHP, Laravel, and Oracle SQL[cite: 1].</li>
+          <li>Optimized complex SQL queries, database structures, and backend business logic for operational departments[cite: 1].</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-title">
+            <h4>Junior PHP Developer</h4>
+            <div class="exp-company">Brainine Solutions / Logix 199 · Contract[cite: 1]</div>
+          </div>
+          <div class="exp-date">Jan 2025 – Jul 2025 · Lahore, PK[cite: 1]</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built backend features for a Core PHP Point of Sale (POS) system, optimizing SQL queries using AJAX, JavaScript, and jQuery[cite: 1].</li>
+          <li>Managed server deployments on Namecheap VPS and cPanel hosting environments while resolving live system bugs[cite: 1].</li>
+        </ul>
       </div>
     </section>
 
     <!-- FEATURED PROJECTS -->
     <section id="projects" class="projects-section">
-      <div class="section-num">02 / SELECTED PROJECTS</div>
+      <div class="section-num">04 / SELECTED PROJECTS</div>
       <h2 class="section-title">Featured work</h2>
-      <p class="section-subtitle">A curated set of web applications and custom software built for real impact.</p>
+      <p class="section-subtitle">A curated set of web applications and custom software built for real impact[cite: 1].</p>
 
       <div class="projects-grid">
 
-        <!-- PROJECT 1: GST BILLING SYSTEM -->
+        <!-- PROJECT 1: GST BILLING -->
         <div class="project-card">
           <div class="project-img-wrapper">
-            <!-- EASY TO EDIT: Replace src below with your GitHub image link or local path -->
-            <img src="uploads/1.PNG" alt="GST Billing & Invoicing System" />
+            <img src="uploads/1.PNG" alt="GST Billing System" />
           </div>
           <div class="project-body">
             <div class="project-tags">
               <span class="project-tag">PHP</span>
               <span class="project-tag">MySQL</span>
-              <span class="project-tag">Financial Reports</span>
+              <span class="project-tag">Financial Ledger</span>
             </div>
             <h3 class="project-title">GST Billing & Invoicing System</h3>
-            <p class="project-desc">A transactional billing engine that automates multi-rate tax calculations, customer ledgers, and invoice generation.</p>
+            <p class="project-desc">A transactional billing engine that automates tax calculations, customer ledgers, and invoice generation[cite: 1].</p>
             <div class="project-links">
-              <a href="#" class="btn-project">View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="#" class="btn-project">View Solution <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
           </div>
         </div>
@@ -697,39 +943,37 @@
         <!-- PROJECT 2: COACHTRIBE -->
         <div class="project-card">
           <div class="project-img-wrapper">
-            <!-- EASY TO EDIT: Replace src below with your GitHub image link or local path -->
             <img src="uploads/new dashboard eg.PNG" alt="CoachTribe Platform" />
           </div>
           <div class="project-body">
             <div class="project-tags">
               <span class="project-tag">Laravel</span>
               <span class="project-tag">REST APIs</span>
-              <span class="project-tag">Background Queues</span>
+              <span class="project-tag">Queues</span>
             </div>
             <h3 class="project-title">CoachTribe SaaS Platform</h3>
-            <p class="project-desc">Backend infrastructure for an international remote coaching platform featuring queues, email dispatchers, and automated jobs.</p>
+            <p class="project-desc">Backend infrastructure for an international remote coaching platform featuring queues, email dispatchers, and automated jobs[cite: 1].</p>
             <div class="project-links">
               <a href="https://coachtribe.co" target="_blank" class="btn-project">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- PROJECT 3: ENTERPRISE ERP -->
+        <!-- PROJECT 3: LEAD MANAGER PRO (WORDPRESS PLUGIN) -->
         <div class="project-card">
           <div class="project-img-wrapper">
-            <!-- EASY TO EDIT: Replace src below with your GitHub image link or local path -->
-            <img src="uploads/article front.png" alt="Enterprise ERP Solutions" />
+            <img src="uploads/article front.png" alt="Lead Manager Pro WP Plugin" />
           </div>
           <div class="project-body">
             <div class="project-tags">
-              <span class="project-tag">Laravel</span>
-              <span class="project-tag">Oracle SQL</span>
-              <span class="project-tag">ERP</span>
+              <span class="project-tag">WordPress Plugin</span>
+              <span class="project-tag">WP REST API</span>
+              <span class="project-tag">OOP</span>
             </div>
-            <h3 class="project-title">Enterprise ERP Solutions</h3>
-            <p class="project-desc">Scalable ERP suite built for sales tracking, inventory workflows, multi-department operational reports, and distribution pipelines.</p>
+            <h3 class="project-title">Smart Lead Manager Pro (Custom WP Plugin)</h3>
+            <p class="project-desc">Custom WordPress plugin written from scratch with custom MySQL tables, shortcodes, and AJAX form handlers[cite: 1].</p>
             <div class="project-links">
-              <a href="https://app.oradigitals.com" target="_blank" class="btn-project">View Solution <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="https://github.com/kamranzafar4343" target="_blank" class="btn-project">GitHub Repo <i class="fa-brands fa-github"></i></a>
             </div>
           </div>
         </div>
@@ -737,7 +981,6 @@
         <!-- PROJECT 4: WAREHOUSE MANAGEMENT SYSTEM -->
         <div class="project-card">
           <div class="project-img-wrapper">
-            <!-- EASY TO EDIT: Replace src below with your GitHub image link or local path -->
             <img src="uploads/new dashboard eg.PNG" alt="Warehouse Management System" />
           </div>
           <div class="project-body">
@@ -747,7 +990,7 @@
               <span class="project-tag">Barcodes</span>
             </div>
             <h3 class="project-title">Warehouse Management System</h3>
-            <p class="project-desc">Multi-branch inventory tool featuring automated rack assignments, stock tracking, and barcode scanning modules.</p>
+            <p class="project-desc">Multi-branch inventory tool featuring automated rack assignments, stock tracking, and barcode scanning modules[cite: 1].</p>
             <div class="project-links">
               <a href="https://github.com/kamranzafar4343/Warehouse-Management-System" target="_blank" class="btn-project">GitHub Repo <i class="fa-brands fa-github"></i></a>
             </div>
@@ -759,89 +1002,118 @@
 
     <!-- TESTIMONIALS SECTION -->
     <section id="testimonials" class="testimonials-section">
-      <div class="section-num">03 / TESTIMONIALS</div>
+      <div class="section-num">05 / TESTIMONIALS</div>
       <h2 class="section-title">What people say</h2>
-      <p class="section-subtitle">Recommendations from managers, founders, and engineering peers.</p>
+      <p class="section-subtitle">Recommendations from managers, founders, and engineering peers[cite: 1].</p>
 
       <div class="testimonials-grid">
-        
         <div class="testimonial-card">
-          <p class="testimonial-quote">"Kamran is a very diligent Backend Developer specializing in PHP and Laravel. He manages his tasks independently and works effectively in a remote setup. I recommend Kamran for backend roles requiring a reliable developer with a strong work ethic."</p>
+          <p class="testimonial-quote">"Kamran is a very diligent Backend Developer specializing in PHP and Laravel. He manages his tasks independently and works effectively in a remote setup. I recommend Kamran for backend roles requiring a reliable developer with a strong work ethic."[cite: 1]</p>
           <div class="testimonial-author">
             <div class="author-avatar">CB</div>
             <div class="author-info">
               <h5>Chiraz Bensemmane</h5>
-              <p>Founder & CEO at Coach Tribe</p>
+              <p>Founder & CEO at Coach Tribe[cite: 1]</p>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card">
-          <p class="testimonial-quote">"I had the privilege of working with Kamran for more than two years. He consistently proved himself to be an exceptional Software Engineer with strong technical expertise, dedication, and a results-oriented mindset."</p>
+          <p class="testimonial-quote">"I had the privilege of working with Kamran for more than two years. He consistently proved himself to be an exceptional Software Engineer with strong technical expertise, dedication, and a results-oriented mindset."[cite: 1]</p>
           <div class="testimonial-author">
             <div class="author-avatar">IA</div>
             <div class="author-info">
               <h5>Imran Ahsanullah</h5>
-              <p>Senior MIS Manager & ERP Consultant</p>
+              <p>Senior MIS Manager & ERP Consultant[cite: 1]</p>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card">
-          <p class="testimonial-quote">"I wholeheartedly recommend Kamran Zafar for his skills in JavaScript, PHP, and web development. His expertise was invaluable in our collaborative projects."</p>
+          <p class="testimonial-quote">"I wholeheartedly recommend Kamran Zafar for his skills in JavaScript, PHP, and web development. His expertise was invaluable in our collaborative projects."[cite: 1]</p>
           <div class="testimonial-author">
             <div class="author-avatar">EK</div>
             <div class="author-info">
               <h5>Ehsan ul Khaliq</h5>
-              <p>Software Design Engineer @ TeReSol</p>
+              <p>Software Design Engineer @ TeReSol[cite: 1]</p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- METRICS GRID -->
-    <section class="metrics-grid">
-      <div class="metric-card">
-        <h3>2+</h3>
-        <p>Years Experience</p>
-      </div>
-      <div class="metric-card">
-        <h3>10+</h3>
-        <p>Projects Delivered</p>
-      </div>
-      <div class="metric-card">
-        <h3>PHP</h3>
-        <p>Core & Laravel Focus</p>
-      </div>
-      <div class="metric-card">
-        <h3>SQL</h3>
-        <p>MySQL & Oracle SQL</p>
-      </div>
-    </section>
-
-    <!-- CONTACT FORM -->
+    <!-- CONTACT FORM & DIRECT ACTIONS -->
     <section id="contact" class="contact-card">
-      <div class="section-num">04 / CONTACT</div>
+      <div class="section-num">06 / CONTACT</div>
       <h2 class="section-title">Let's build something together</h2>
-      <p class="section-subtitle">Have a project or web application challenge in mind? Send me a message.</p>
+      <p class="section-subtitle">Send me a message directly or chat on WhatsApp. Includes a 5–15 Day Risk-Free Trial Period[cite: 1].</p>
 
-      <form action="mailto:kamranzafar4343@gmail.com" method="post" enctype="text/plain">
+      <form id="portfolioContactForm" onsubmit="sendToWhatsApp(event)">
         <div class="form-grid">
-          <input type="text" class="form-input" placeholder="Your Name" required />
-          <input type="email" class="form-input" placeholder="Your Email" required />
-          <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+          <input type="text" id="senderName" class="form-input" placeholder="Your Name" required />
+          <input type="email" id="senderEmail" class="form-input" placeholder="Your Email" required />
+          <textarea id="senderMessage" class="form-textarea" placeholder="Tell me about your project or job opening..." required></textarea>
         </div>
-        <button type="submit" class="btn-main" style="width: 100%; justify-content: center; border: none; cursor: pointer;">Send message <i class="fa-solid fa-paper-plane"></i></button>
+        <button type="submit" class="btn-main" style="width: 100%; justify-content: center; border: none; cursor: pointer;">
+          Send via WhatsApp <i class="fa-brands fa-whatsapp"></i>
+        </button>
       </form>
+
+      <div class="direct-contacts">
+        <a href="https://wa.me/923184090843" target="_blank" class="btn-wa-direct">
+          <i class="fa-brands fa-whatsapp"></i> +92 318 4090843
+        </a>
+        <a href="mailto:kamranzafar4343@gmail.com" class="btn-email-direct">
+          <i class="fa-solid fa-envelope"></i> kamranzafar4343@gmail.com
+        </a>
+      </div>
     </section>
 
     <footer>
-      © 2026 Kamran Zafar. All rights reserved.
+      © 2026 Kamran Zafar. All rights reserved[cite: 1].
     </footer>
 
   </div>
+
+  <!-- JAVASCRIPT FOR ANIMATED CURSOR & WHATSAPP ROUTING -->
+  <script>
+    // CURSOR ANIMATION
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    window.addEventListener('mousemove', (e) => {
+      const posX = e.clientX;
+      const posY = e.clientY;
+
+      cursorDot.style.left = `${posX}px`;
+      cursorDot.style.top = `${posY}px`;
+
+      cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+      }, { duration: 500, fill: "forwards" });
+    });
+
+    // CURSOR HOVER EFFECTS
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+
+    // WHATSAPP FORM ROUTER
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const email = document.getElementById('senderEmail').value;
+      const message = document.getElementById('senderMessage').value;
+
+      const formattedText = `Hi Kamran,%0A%0AMy name is *${encodeURIComponent(name)}* (${encodeURIComponent(email)}).%0A%0A*Message:*%0A${encodeURIComponent(message)}`;
+      const whatsappURL = `https://wa.me/923184090843?text=${formattedText}`;
+
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
 
 </body>
 </html>
