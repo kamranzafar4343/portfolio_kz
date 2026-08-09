@@ -25,9 +25,9 @@
       --tag-bg: #F1EFF7;
       --tag-text: #4F46E5;
       --pill-bg: #EAE6DF;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --radius-sm: 8px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
       --whatsapp-green: #25D366;
     }
 
@@ -37,15 +37,15 @@
       padding: 0;
     }
 
-    /* CURSOR */
+    /* CURSOR ENGINE */
     @media (min-width: 993px) {
       body { cursor: none; }
       a, button, input, textarea { cursor: none; }
     }
 
     .cursor-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       background-color: var(--btn-green);
       position: fixed;
       top: 0;
@@ -57,8 +57,8 @@
     }
 
     .cursor-outline {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       border: 1.5px solid var(--btn-green);
       position: fixed;
       top: 0;
@@ -71,8 +71,8 @@
     }
 
     body.cursor-hover .cursor-outline {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       background: rgba(27, 59, 43, 0.08);
       border-color: var(--btn-green);
     }
@@ -91,18 +91,18 @@
     a { text-decoration: none; color: inherit; }
 
     .container {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
     /* NAVBAR */
     .navbar {
-      padding: 18px 0;
+      padding: 20px 0;
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(250, 247, 242, 0.9);
+      background: rgba(250, 247, 242, 0.92);
       backdrop-filter: blur(12px);
     }
 
@@ -114,16 +114,17 @@
 
     .logo-badge {
       font-weight: 900;
-      font-size: 14px;
+      font-size: 15px;
       background: var(--pill-bg);
-      padding: 6px 14px;
+      padding: 6px 16px;
       border-radius: 999px;
       color: var(--text-main);
+      letter-spacing: -0.5px;
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 28px;
       list-style: none;
       font-size: 13px;
       font-weight: 700;
@@ -135,7 +136,7 @@
     .btn-talk {
       background: var(--btn-green);
       color: #fff;
-      padding: 8px 18px;
+      padding: 10px 20px;
       border-radius: 999px;
       font-size: 13px;
       font-weight: 700;
@@ -144,20 +145,20 @@
 
     .btn-talk:hover { background: var(--btn-green-hover); transform: translateY(-1px); }
 
-    /* HERO */
-    .hero { padding: 50px 0 70px; }
+    /* HERO SECTION */
+    .hero { padding: 60px 0 80px; }
 
     .status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       background: var(--pill-bg);
-      padding: 6px 14px;
+      padding: 6px 16px;
       border-radius: 999px;
       font-size: 12px;
       font-weight: 700;
       color: var(--text-main);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .status-dot {
@@ -170,28 +171,28 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
       align-items: center;
     }
 
     .hero-title {
-      font-size: 52px;
+      font-size: 58px;
       font-weight: 900;
-      line-height: 1.05;
+      line-height: 1.02;
       letter-spacing: -2px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       color: var(--text-main);
     }
 
     .hero-title span { color: var(--btn-green); }
 
     .hero p {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--text-muted);
       line-height: 1.6;
-      max-width: 520px;
-      margin-bottom: 22px;
+      max-width: 540px;
+      margin-bottom: 24px;
       font-weight: 500;
     }
 
@@ -206,7 +207,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .hero-actions {
@@ -219,10 +220,10 @@
     .btn-main {
       background: var(--btn-green);
       color: #fff;
-      padding: 12px 24px;
+      padding: 14px 28px;
       border-radius: 999px;
       font-weight: 800;
-      font-size: 13px;
+      font-size: 14px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -236,57 +237,89 @@
 
     .btn-text {
       font-weight: 800;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-main);
-      padding: 12px 18px;
+      padding: 14px 20px;
     }
 
-    /* COMPACT HERO GRAPH */
-    .hero-canvas-wrapper {
-      background: var(--card-bg);
+    /* EXACT HERO CANVAS LAYOUT MATCHING REFERENCE */
+    .hero-canvas-container {
+      position: relative;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .core-hub {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #FFFFFF;
       border: 1px solid var(--card-border);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-    }
-
-    .node-grid {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
     }
 
-    .node-row {
-      display: flex;
-      gap: 12px;
+    .core-hub i {
+      font-size: 20px;
+      color: var(--btn-green);
+      margin-bottom: 4px;
     }
 
-    .node-item {
-      flex: 1;
-      background: var(--bg);
+    .core-hub span {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text-main);
+    }
+
+    .floating-node {
+      position: absolute;
+      background: #FFFFFF;
       border: 1px solid var(--card-border);
-      border-radius: var(--radius-sm);
-      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
       display: flex;
       align-items: center;
       gap: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+      transition: transform 0.3s ease;
     }
 
-    .node-item i { font-size: 18px; color: var(--btn-green); }
-    .node-item strong { font-size: 12px; display: block; font-weight: 800; }
-    .node-item span { font-size: 10px; color: var(--text-muted); }
+    .floating-node:hover {
+      transform: translateY(-4px);
+      border-color: var(--btn-green);
+    }
 
-    .node-center {
-      background: var(--btn-green);
-      color: #fff;
-      padding: 12px;
-      border-radius: var(--radius-sm);
-      text-align: center;
-      font-weight: 800;
+    .floating-node i {
+      font-size: 20px;
+      color: var(--btn-green);
+    }
+
+    .node-text strong {
+      display: block;
       font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
     }
 
-    /* SECTION HEADERS */
+    .node-text span {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* NODE POSITIONS */
+    .node-top-left { top: 20px; left: 10px; }
+    .node-top-right { top: 20px; right: 10px; }
+    .node-bottom-left { bottom: 20px; left: 10px; }
+    .node-bottom-right { bottom: 20px; right: 10px; }
+
+    /* SECTIONS */
     .section-num {
       font-size: 11px;
       font-weight: 800;
@@ -297,7 +330,7 @@
     }
 
     .section-title {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 900;
       letter-spacing: -1.2px;
       margin-bottom: 8px;
@@ -306,7 +339,7 @@
     .section-subtitle {
       font-size: 14px;
       color: var(--text-muted);
-      margin-bottom: 32px;
+      margin-bottom: 36px;
       font-weight: 500;
     }
 
@@ -314,15 +347,15 @@
     .tech-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      margin-bottom: 70px;
+      gap: 14px;
+      margin-bottom: 80px;
     }
 
     .tech-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-md);
-      padding: 16px 12px;
+      padding: 18px 14px;
       text-align: center;
       transition: all 0.2s ease;
     }
@@ -333,7 +366,7 @@
     }
 
     .tech-card i {
-      font-size: 24px;
+      font-size: 26px;
       margin-bottom: 8px;
       color: var(--btn-green);
     }
@@ -341,33 +374,33 @@
     .tech-card h4 { font-size: 13px; font-weight: 800; margin-bottom: 2px; }
     .tech-card p { font-size: 11px; color: var(--text-muted); }
 
-    /* COMPACT DOMAINS */
+    /* DOMAINS */
     .domains-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-bottom: 70px;
+      gap: 16px;
+      margin-bottom: 80px;
     }
 
     .domain-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-md);
-      padding: 18px;
+      padding: 20px;
     }
 
-    .domain-card h4 { font-size: 14px; font-weight: 800; margin-bottom: 6px; }
+    .domain-card h4 { font-size: 15px; font-weight: 800; margin-bottom: 6px; }
     .domain-card p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
 
     /* EXPERIENCE TIMELINE */
-    .exp-section { margin-bottom: 70px; }
+    .exp-section { margin-bottom: 80px; }
 
     .exp-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-md);
-      padding: 20px;
-      margin-bottom: 14px;
+      padding: 22px;
+      margin-bottom: 16px;
     }
 
     .exp-header {
@@ -378,25 +411,25 @@
       flex-wrap: wrap;
     }
 
-    .exp-title h4 { font-size: 16px; font-weight: 800; }
-    .exp-company { font-size: 12px; font-weight: 800; color: var(--btn-green); }
-    .exp-date { font-size: 11px; color: var(--text-muted); font-weight: 700; }
+    .exp-title h4 { font-size: 17px; font-weight: 800; }
+    .exp-company { font-size: 13px; font-weight: 800; color: var(--btn-green); }
+    .exp-date { font-size: 12px; color: var(--text-muted); font-weight: 700; }
 
     .exp-bullets {
       padding-left: 18px;
-      font-size: 12px;
+      font-size: 13px;
       color: var(--text-muted);
     }
 
     .exp-bullets li { margin-bottom: 6px; }
 
-    /* COMPACT PROJECTS GRID */
-    .projects-section { margin-bottom: 70px; }
+    /* PROJECTS GRID */
+    .projects-section { margin-bottom: 80px; }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
 
     .project-card {
@@ -411,9 +444,9 @@
 
     .project-img-wrapper {
       background: var(--bg);
-      padding: 16px;
+      padding: 18px;
       border-bottom: 1px solid var(--card-border);
-      height: 190px;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -427,13 +460,13 @@
       border: 1px solid var(--card-border);
     }
 
-    .project-body { padding: 20px; }
+    .project-body { padding: 22px; }
 
     .project-tags {
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .project-tag {
@@ -445,8 +478,8 @@
       border-radius: 999px;
     }
 
-    .project-title { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
-    .project-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; }
+    .project-title { font-size: 19px; font-weight: 800; margin-bottom: 6px; }
+    .project-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 18px; }
 
     .btn-project {
       background: var(--btn-green);
@@ -460,30 +493,30 @@
       gap: 6px;
     }
 
-    /* COMPACT TESTIMONIALS */
-    .testimonials-section { margin-bottom: 70px; }
+    /* TESTIMONIALS */
+    .testimonials-section { margin-bottom: 80px; }
 
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 16px;
     }
 
     .testimonial-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-md);
-      padding: 20px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
     .testimonial-quote {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--text-main);
       line-height: 1.6;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .testimonial-author {
@@ -491,12 +524,12 @@
       align-items: center;
       gap: 10px;
       border-top: 1px solid var(--card-border);
-      padding-top: 12px;
+      padding-top: 14px;
     }
 
     .author-avatar {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       background: var(--btn-green);
       color: #fff;
@@ -504,28 +537,28 @@
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 11px;
+      font-size: 12px;
     }
 
-    .author-info h5 { font-size: 12px; font-weight: 800; }
+    .author-info h5 { font-size: 13px; font-weight: 800; }
     .author-info p { font-size: 10px; color: var(--text-muted); }
 
-    /* CONTACT */
+    /* CONTACT CARD */
     .contact-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-lg);
-      padding: 36px;
+      padding: 40px;
       text-align: center;
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
     }
 
     .form-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin: 20px 0 16px;
+      gap: 14px;
+      margin: 22px 0 18px;
     }
 
     .form-input, .form-textarea {
@@ -533,31 +566,31 @@
       background: var(--bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-sm);
-      padding: 12px 14px;
+      padding: 12px 16px;
       font-family: inherit;
       font-size: 13px;
       color: var(--text-main);
       outline: none;
     }
 
-    .form-textarea { grid-column: span 2; height: 100px; resize: none; }
+    .form-textarea { grid-column: span 2; height: 110px; resize: none; }
     .form-input:focus, .form-textarea:focus { border-color: var(--btn-green); }
 
     .direct-contacts {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin-top: 18px;
+      gap: 14px;
+      margin-top: 20px;
       flex-wrap: wrap;
     }
 
     .btn-wa-direct {
       background: #25D366;
       color: #fff;
-      padding: 10px 18px;
+      padding: 10px 20px;
       border-radius: 999px;
       font-weight: 800;
-      font-size: 12px;
+      font-size: 13px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -566,10 +599,10 @@
     .btn-email-direct {
       background: var(--pill-bg);
       color: var(--text-main);
-      padding: 10px 18px;
+      padding: 10px 20px;
       border-radius: 999px;
       font-weight: 800;
-      font-size: 12px;
+      font-size: 13px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -578,16 +611,16 @@
     /* WHATSAPP FLOAT */
     .whatsapp-float {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 52px;
-      height: 52px;
+      bottom: 26px;
+      right: 26px;
+      width: 54px;
+      height: 54px;
       background-color: var(--whatsapp-green);
       color: #FFF;
       border-radius: 50px;
       text-align: center;
-      font-size: 28px;
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+      font-size: 30px;
+      box-shadow: 0 8px 22px rgba(37, 211, 102, 0.4);
       z-index: 1000;
       display: flex;
       align-items: center;
@@ -613,7 +646,7 @@
 
     footer {
       text-align: center;
-      padding-top: 40px;
+      padding-top: 50px;
       font-size: 12px;
       color: var(--text-muted);
     }
@@ -621,9 +654,12 @@
     @media (max-width: 992px) {
       .hero-grid, .projects-grid, .testimonials-grid, .domains-grid { grid-template-columns: 1fr; }
       .tech-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-title { font-size: 38px; }
+      .hero-title { font-size: 40px; }
       .form-grid { grid-template-columns: 1fr; }
       .form-textarea { grid-column: span 1; }
+      .hero-canvas-container { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .floating-node { position: relative; top: auto; bottom: auto; left: auto; right: auto; }
+      .core-hub { display: none; }
     }
   </style>
 </head>
@@ -664,7 +700,7 @@
             <div class="status-dot"></div> Available for Full Stack Roles
           </div>
           <h1 class="hero-title">Full Stack <span>Developer.</span></h1>
-          <p>Full Stack Developer with 2+ years of software experience building web applications using PHP, Laravel, WordPress, and MySQL[cite: 1]. Easily adaptable to US, UK, and European time zones[cite: 1].</p>
+          <p>Full Stack Developer with 2+ years of experience building web applications with PHP, Laravel, WordPress, and MySQL[cite: 1]. Easily adaptable to US, UK, and European time zones[cite: 1].</p>
           
           <div class="trial-box">
             <i class="fa-solid fa-shield-halved"></i> 5 to 15 Days Risk-Free Trial (0 Cost upfront)[cite: 1]
@@ -676,45 +712,42 @@
           </div>
         </div>
 
-        <!-- VISUAL CANVAS WRAPPER -->
-        <div class="hero-canvas-wrapper">
-          <div class="node-grid">
-            <div class="node-row">
-              <div class="node-item">
-                <i class="fa-brands fa-laravel"></i>
-                <div>
-                  <strong>Laravel Engine</strong>
-                  <span>MVC & REST APIs</span>[cite: 1]
-                </div>
-              </div>
-              <div class="node-item">
-                <i class="fa-brands fa-wordpress"></i>
-                <div>
-                  <strong>WordPress Core</strong>
-                  <span>Plugins & Themes</span>[cite: 1]
-                </div>
-              </div>
-            </div>
+        <!-- FLOATING NODE CANVAS MATCHING REFERENCE IMAGE -->
+        <div class="hero-canvas-container">
+          <div class="core-hub">
+            <i class="fa-solid fa-cubes-stacked"></i>
+            <span>CORE</span>
+          </div>
 
-            <div class="node-center">
-              2+ Years Software House Experience[cite: 1]
+          <div class="floating-node node-top-left">
+            <i class="fa-brands fa-laravel"></i>
+            <div class="node-text">
+              <strong>PHP / Laravel</strong>
+              <span>MVC & REST APIs</span>[cite: 1]
             </div>
+          </div>
 
-            <div class="node-row">
-              <div class="node-item">
-                <i class="fa-solid fa-database"></i>
-                <div>
-                  <strong>MySQL & Oracle</strong>
-                  <span>Query Optimization</span>[cite: 1]
-                </div>
-              </div>
-              <div class="node-item">
-                <i class="fa-brands fa-js"></i>
-                <div>
-                  <strong>JavaScript / AJAX</strong>
-                  <span>Dynamic Web Apps</span>[cite: 1]
-                </div>
-              </div>
+          <div class="floating-node node-top-right">
+            <i class="fa-brands fa-wordpress"></i>
+            <div class="node-text">
+              <strong>WordPress Core</strong>
+              <span>Plugins & WooCommerce</span>[cite: 1]
+            </div>
+          </div>
+
+          <div class="floating-node node-bottom-left">
+            <i class="fa-solid fa-database"></i>
+            <div class="node-text">
+              <strong>MySQL & Oracle SQL</strong>
+              <span>Query Optimization</span>[cite: 1]
+            </div>
+          </div>
+
+          <div class="floating-node node-bottom-right">
+            <i class="fa-brands fa-js"></i>
+            <div class="node-text">
+              <strong>JavaScript / AJAX</strong>
+              <span>Dynamic Web Apps</span>[cite: 1]
             </div>
           </div>
         </div>
@@ -790,7 +823,7 @@
       </div>
     </section>
 
-    <!-- WORK EXPERIENCE (2 YEARS TOTAL ACCORDING TO EXPERIENCE) -->
+    <!-- WORK EXPERIENCE -->
     <section id="experience" class="exp-section">
       <div class="section-num">03 / EXPERIENCE</div>
       <h2 class="section-title">2 Years Work Experience</h2>
