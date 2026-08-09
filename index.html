@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kamran Zafar | PHP, Laravel & Web Developer</title>
-  <meta name="description" content="Kamran Zafar - Software Engineer specializing in PHP, Laravel, WordPress, REST APIs, and Web Development.">
-
-  <!-- Inter & Fira Code Fonts -->
+  <title>Kamran Zafar | Backend & Full-Stack PHP Developer</title>
+  
+  <!-- Inter & Plus Jakarta Sans Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- FontAwesome -->
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
   <style>
     :root {
-      --bg: #0d1117;
-      --bg-alt: #161b22;
-      --card-bg: rgba(22, 27, 34, 0.75);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --card-border-hover: rgba(56, 189, 248, 0.4);
-      --text-main: #f0f6fc;
-      --text-muted: #8b949e;
-      --accent-blue: #2563eb;
-      --accent-sky: #38bdf8;
-      --accent-green: #238636;
-      --code-bg: #090d13;
-      --radius: 12px;
+      --bg: #FAF7F2;
+      --card-bg: #FFFFFF;
+      --card-border: #EFECE6;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --btn-green: #1B3B2B;
+      --btn-green-hover: #12281D;
+      --tag-bg: #F1EFF7;
+      --tag-text: #4F46E5;
+      --pill-bg: #EAE6DF;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
     }
 
     * {
@@ -36,443 +36,402 @@
       padding: 0;
     }
 
-    @media (min-width: 993px) {
-      body {
-        cursor: none;
-      }
-    }
-
-    .cursor-dot {
-      width: 8px;
-      height: 8px;
-      background-color: var(--accent-sky);
-      position: fixed;
-      top: 0;
-      left: 0;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease;
-    }
-
-    .cursor-outline {
-      width: 32px;
-      height: 32px;
-      border: 1px solid rgba(56, 189, 248, 0.5);
-      position: fixed;
-      top: 0;
-      left: 0;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: width 0.2s ease, height 0.2s ease, top 0.15s ease-out, left 0.15s ease-out;
-    }
-
     html {
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      padding-bottom: 40px;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      margin-bottom: 40px;
-    }
-
-    .section-title span {
-      color: var(--accent-sky);
-      font-family: 'Fira Code', monospace;
-      font-size: 13px;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .section-title h2 {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      color: var(--text-main);
-    }
-
-    .section-title p {
-      color: var(--text-muted);
-      max-width: 600px;
-      margin-top: 8px;
-      font-size: 15px;
-    }
-
-    .glass-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      transition: all 0.25s ease;
-    }
-
-    .glass-card:hover {
-      border-color: var(--card-border-hover);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      padding: 0 24px;
     }
 
     /* NAVBAR */
     .navbar {
-      position: fixed;
+      padding: 24px 0;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
       z-index: 100;
-      background: rgba(13, 17, 23, 0.85);
+      background: rgba(250, 247, 242, 0.85);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--card-border);
-      padding: 16px 0;
     }
 
-    .navbar .container {
+    .nav-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .logo {
-      font-family: 'Fira Code', monospace;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--accent-sky);
+    .logo-badge {
+      font-weight: 800;
+      font-size: 15px;
+      background: var(--pill-bg);
+      padding: 6px 14px;
+      border-radius: 999px;
+      color: var(--text-main);
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 28px;
       list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--text-muted);
-      transition: color 0.2s;
     }
 
     .nav-links a:hover {
       color: var(--text-main);
     }
 
-    /* HERO */
-    .hero {
-      padding: 140px 0 60px;
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.12), transparent 40%),
-                  radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.08), transparent 40%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 12px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      color: var(--accent-sky);
-      font-family: 'Fira Code', monospace;
-      font-size: 12px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 46px;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(135deg, #38bdf8, #818cf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      font-size: 16px;
-      color: var(--text-muted);
-      margin-bottom: 28px;
-      line-height: 1.7;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .btn-talk {
+      background: var(--btn-green);
+      color: #fff;
       padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 13px;
+      border-radius: 999px;
+      font-size: 14px;
       font-weight: 700;
       transition: all 0.2s;
     }
 
-    .btn-primary {
-      background: var(--accent-blue);
-      color: #fff;
+    .btn-talk:hover {
+      background: var(--btn-green-hover);
     }
 
-    .btn-primary:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
+    /* HERO */
+    .hero {
+      padding: 60px 0 100px;
     }
 
-    .btn-secondary {
-      background: var(--bg-alt);
-      border: 1px solid var(--card-border);
-      color: var(--text-main);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--card-border-hover);
-      transform: translateY(-2px);
-    }
-
-    /* TERMINAL MOCKUP */
-    .terminal-window {
-      background: var(--code-bg);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      font-family: 'Fira Code', monospace;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    .terminal-header {
-      background: rgba(255, 255, 255, 0.03);
-      padding: 10px 14px;
-      display: flex;
+    .status-pill {
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-      border-bottom: 1px solid var(--card-border);
+      background: var(--pill-bg);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 24px;
     }
 
-    .dot {
-      width: 10px;
-      height: 10px;
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #22C55E;
       border-radius: 50%;
     }
 
-    .dot-red { background: #ff5f56; }
-    .dot-yellow { background: #ffbd2e; }
-    .dot-green { background: #27c93f; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
 
-    .terminal-title {
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+      color: var(--text-main);
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-main {
+      background: var(--btn-green);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-main:hover {
+      background: var(--btn-green-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-text {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-main);
+      padding: 14px 20px;
+    }
+
+    /* ARCHITECTURE DIAGRAM MOCKUP */
+    .arch-diagram {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .arch-node {
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .arch-node i {
+      font-size: 20px;
+      color: var(--btn-green);
+    }
+
+    .arch-node strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .arch-node span {
       font-size: 11px;
       color: var(--text-muted);
-      margin-left: 6px;
     }
 
-    .terminal-body {
-      padding: 18px;
-      font-size: 12px;
-      line-height: 1.8;
-      color: #d4d4d4;
+    .arch-center {
+      grid-column: span 2;
+      background: var(--btn-green);
+      color: #fff;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      text-align: center;
     }
 
-    .code-keyword { color: #569cd6; }
-    .code-var { color: #9cdcfe; }
-    .code-string { color: #ce9178; }
-    .code-function { color: #dcdcaa; }
-
-    /* ABOUT */
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .about-card-main {
-      padding: 30px;
-    }
-
-    .about-card-main h3 {
-      font-size: 20px;
+    /* SECTION HEADER */
+    .section-num {
+      font-size: 13px;
       font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -1px;
       margin-bottom: 12px;
     }
 
-    .about-card-main p {
+    .section-subtitle {
+      font-size: 16px;
       color: var(--text-muted);
-      font-size: 14px;
-      margin-bottom: 14px;
+      margin-bottom: 40px;
     }
 
-    .about-metrics {
+    /* TECH STACK GRID */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-bottom: 100px;
+    }
+
+    .tech-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .tech-card i {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: var(--btn-green);
+    }
+
+    .tech-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .tech-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* PROJECTS GRID */
+    .projects-section {
+      margin-bottom: 100px;
+    }
+
+    .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      gap: 32px;
     }
 
-    .metric-box {
-      padding: 20px;
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-    }
-
-    .metric-box h4 {
-      font-size: 24px;
-      font-weight: 900;
-      color: var(--accent-sky);
-      font-family: 'Fira Code', monospace;
-    }
-
-    .metric-box p {
-      font-size: 12px;
-      color: var(--text-muted);
-      font-weight: 600;
-      margin-top: 4px;
-    }
-
-    /* EXPERIENCE TIMELINE */
-    .experience-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .exp-item {
-      padding: 24px;
-    }
-
-    .exp-header {
-      display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
+    }
+
+    .project-img-wrapper {
+      background: var(--bg);
+      padding: 24px;
+      border-bottom: 1px solid var(--card-border);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .project-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .project-body {
+      padding: 28px;
+    }
+
+    .project-tags {
+      display: flex;
       gap: 8px;
-      margin-bottom: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
     }
 
-    .exp-title h3 {
-      font-size: 18px;
+    .project-tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .project-title {
+      font-size: 22px;
       font-weight: 800;
+      margin-bottom: 8px;
     }
 
-    .exp-title .company {
+    .project-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn-project {
+      background: var(--btn-green);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 999px;
       font-size: 13px;
       font-weight: 700;
-      color: var(--accent-sky);
-    }
-
-    .exp-meta {
-      text-align: right;
-      font-size: 12px;
-      color: var(--text-muted);
-      font-family: 'Fira Code', monospace;
-    }
-
-    .exp-body ul {
-      list-style: none;
-    }
-
-    .exp-body li {
-      position: relative;
-      padding-left: 18px;
-      color: var(--text-muted);
-      font-size: 13px;
-      margin-bottom: 6px;
-    }
-
-    .exp-body li::before {
-      content: "›";
-      color: var(--accent-sky);
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-      top: -1px;
-    }
-
-    .exp-tags {
-      display: flex;
+      display: inline-flex;
+      align-items: center;
       gap: 6px;
-      flex-wrap: wrap;
-      margin-top: 12px;
     }
 
-    .exp-tags span {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--card-border);
-      color: var(--accent-sky);
-      font-size: 10px;
-      font-family: 'Fira Code', monospace;
-      padding: 2px 8px;
-      border-radius: 4px;
+    .btn-project-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* RECOMMENDATIONS SECTION */
-    .recommendations-grid {
+    /* TESTIMONIALS SECTION */
+    .testimonials-section {
+      margin-bottom: 100px;
+    }
+
+    .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .recommendation-card {
-      padding: 24px;
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      position: relative;
     }
 
-    .quote-icon {
-      font-size: 24px;
-      color: var(--accent-sky);
-      opacity: 0.3;
-      margin-bottom: 12px;
-    }
-
-    .recommendation-text {
-      font-size: 13px;
-      color: var(--text-muted);
+    .testimonial-quote {
+      font-size: 14px;
+      color: var(--text-main);
       line-height: 1.7;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
-    .author-info {
+    .testimonial-author {
       display: flex;
       align-items: center;
       gap: 12px;
@@ -481,510 +440,408 @@
     }
 
     .author-avatar {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid var(--card-border-hover);
+      background: var(--btn-green);
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-sky);
       font-weight: 800;
       font-size: 14px;
-      font-family: 'Fira Code', monospace;
-      flex-shrink: 0;
     }
 
-    .author-details h4 {
+    .author-info h5 {
       font-size: 14px;
-      font-weight: 700;
-      color: var(--text-main);
+      font-weight: 800;
     }
 
-    .author-details p {
+    .author-info p {
       font-size: 11px;
       color: var(--text-muted);
-      line-height: 1.3;
-      margin-top: 2px;
     }
 
-    .relationship-tag {
-      display: inline-block;
-      font-size: 10px;
-      color: var(--accent-sky);
-      font-family: 'Fira Code', monospace;
-      margin-top: 4px;
-    }
-
-    /* PROJECTS */
-    .projects-grid {
+    /* SERVICES & METRICS */
+    .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
+      margin-bottom: 100px;
     }
 
-    .project-card {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
     }
 
-    .project-card h3 {
-      font-size: 16px;
-      font-weight: 800;
-      margin-bottom: 6px;
+    .metric-card h3 {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 4px;
     }
 
-    .project-card p {
-      font-size: 12px;
+    .metric-card p {
+      font-size: 13px;
       color: var(--text-muted);
-      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    /* CONTACT FORM */
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 32px 0 16px;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--text-main);
+      outline: none;
+    }
+
+    .form-textarea {
+      grid-column: span 2;
+      height: 120px;
+      resize: none;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--btn-green);
     }
 
     /* FOOTER */
     footer {
-      border-top: 1px solid var(--card-border);
-      padding: 24px 0;
       text-align: center;
-      font-size: 12px;
+      padding-top: 60px;
+      font-size: 13px;
       color: var(--text-muted);
-      font-family: 'Fira Code', monospace;
     }
 
-    /* RESPONSIVE DESIGN */
+    /* RESPONSIVE */
     @media (max-width: 992px) {
-      .hero-grid, .about-layout, .recommendations-grid, .projects-grid {
+      .hero-grid, .projects-grid, .testimonials-grid, .metrics-grid {
         grid-template-columns: 1fr;
       }
+      .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .hero h1 {
-        font-size: 34px;
+        font-size: 40px;
       }
-      .nav-links {
-        display: none;
+      .form-grid {
+        grid-template-columns: 1fr;
       }
-      .exp-header {
-        flex-direction: column;
-      }
-      .exp-meta {
-        text-align: left;
+      .form-textarea {
+        grid-column: span 1;
       }
     }
   </style>
 </head>
-
 <body>
-
-  <!-- CUSTOM CURSOR -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="container">
-      <a href="#home" class="logo">kz@developer:~$</a>
+    <div class="container nav-wrapper">
+      <div class="logo-badge">KZ.</div>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#recommendations">Recommendations</a></li>
+        <li><a href="#stack">Stack</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <a href="mailto:kamranzafar4343@gmail.com" class="btn-talk">Let's talk</a>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="hero">
-    <div class="container">
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
       <div class="hero-grid">
-        
         <div>
-          <div class="hero-badge">
-            <i class="fa-solid fa-code"></i> Software Engineer
+          <div class="status-pill">
+            <div class="status-dot"></div> Available for new projects
           </div>
-          <h1>Hey, I'm <span>Kamran Zafar</span></h1>
-          <p>Software engineer with 2+ years of experience building web applications, backend systems, and APIs using PHP, Laravel, WordPress, and database solutions.</p>
-          
-          <div class="hero-btns">
-            <a href="#projects" class="btn btn-primary">
-              View Projects <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="https://drive.google.com/file/d/1TVTjPkycOOyi2YWaFVpVwfn8D45DqTYY/view?usp=sharing" target="_blank" class="btn btn-secondary">
-              Resume <i class="fa-solid fa-download"></i>
-            </a>
+          <h1>Backend & Full-Stack PHP Developer</h1>
+          <p>I build high-performance web applications with PHP, Laravel, and MySQL, alongside custom WordPress plugins and REST API integrations.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-main">View selected work <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://drive.google.com/file/d/1TVTjPkycOOyi2YWaFVpVwfn8D45DqTYY/view?usp=sharing" target="_blank" class="btn-text">Resume</a>
           </div>
         </div>
 
-        <!-- TERMINAL MOCKUP -->
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <div class="dot dot-red"></div>
-            <div class="dot dot-yellow"></div>
-            <div class="dot dot-green"></div>
-            <span class="terminal-title">DeveloperProfile.php</span>
-          </div>
-          <div class="terminal-body">
-            <p><span class="code-keyword">namespace</span> App\Engineers;</p>
-            <br>
-            <p><span class="code-keyword">class</span> <span class="code-function">KamranZafar</span> <span class="code-keyword">extends</span> WebDeveloper</p>
-            <p>{</p>
-            <p>&nbsp;&nbsp;<span class="code-keyword">public const</span> <span class="code-var">EXPERIENCE</span> = <span class="code-string">'2+ Years'</span>;</p>
-            <p>&nbsp;&nbsp;<span class="code-keyword">public const</span> <span class="code-var">LOCATION</span> = <span class="code-string">'Lahore, PK'</span>;</p>
-            <br>
-            <p>&nbsp;&nbsp;<span class="code-keyword">public function</span> <span class="code-function">getSkills</span>(): <span class="code-keyword">array</span></p>
-            <p>&nbsp;&nbsp;{</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> [</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'PHP & Laravel'</span>,</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'REST APIs'</span>,</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'WordPress'</span>,</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">'MySQL & Oracle SQL'</span></p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;];</p>
-            <p>&nbsp;&nbsp;}</p>
-            <p>}</p>
+        <!-- VISUAL DIAGRAM -->
+        <div class="arch-diagram">
+          <div class="arch-grid">
+            <div class="arch-node">
+              <i class="fa-brands fa-laravel"></i>
+              <div>
+                <strong>Laravel Framework</strong>
+                <span>MVC Engine</span>
+              </div>
+            </div>
+            <div class="arch-node">
+              <i class="fa-brands fa-wordpress"></i>
+              <div>
+                <strong>WordPress Core</strong>
+                <span>Plugins & Hooks</span>
+              </div>
+            </div>
+            <div class="arch-center">
+              <strong>Core REST APIs</strong>
+              <span style="font-size: 11px; opacity: 0.9;">System Backend</span>
+            </div>
+            <div class="arch-node">
+              <i class="fa-solid fa-database"></i>
+              <div>
+                <strong>MySQL / Oracle SQL</strong>
+                <span>Database Layer</span>
+              </div>
+            </div>
+            <div class="arch-node">
+              <i class="fa-brands fa-js"></i>
+              <div>
+                <strong>AJAX & JS</strong>
+                <span>Frontend Logic</span>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-title">
-        <span>// ABOUT ME</span>
-        <h2>Web & Backend Engineer</h2>
+    <!-- TECH STACK -->
+    <section id="stack">
+      <div class="section-num">01 / CORE STACK</div>
+      <h2 class="section-title">Technologies I use to ship production-grade systems</h2>
+      <p class="section-subtitle">Proven web technologies for scalable backends, APIs, and business software.</p>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <i class="fa-brands fa-php"></i>
+          <h4>PHP</h4>
+          <p>Core & OOP</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-brands fa-laravel"></i>
+          <h4>Laravel</h4>
+          <p>Backend Framework</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-brands fa-wordpress"></i>
+          <h4>WordPress</h4>
+          <p>Custom Plugins</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-database"></i>
+          <h4>MySQL</h4>
+          <p>Database</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-server"></i>
+          <h4>REST APIs</h4>
+          <p>Integrations</p>
+        </div>
       </div>
+    </section>
 
-      <div class="about-layout">
-        
-        <div class="glass-card about-card-main">
-          <h3>PHP, Laravel & WordPress Developer</h3>
-          <p>Computer Science graduate with 2+ years of professional experience building web platforms, SaaS features, custom tools, and REST APIs using PHP, Laravel, and MySQL.</p>
-          <p>Focused on writing clean code, building usable workflows, handling client integrations, setup, and maintaining database performance for applications.</p>
-        </div>
-
-        <div class="about-metrics">
-          <div class="glass-card metric-box">
-            <h4>PHP & Laravel</h4>
-            <p>Backend & APIs</p>
-          </div>
-          <div class="glass-card metric-box">
-            <h4>WordPress</h4>
-            <p>Themes & Plugins</p>
-          </div>
-          <div class="glass-card metric-box">
-            <h4>REST APIs</h4>
-            <p>Integrations</p>
-          </div>
-          <div class="glass-card metric-box">
-            <h4>Databases</h4>
-            <p>MySQL & Oracle SQL</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE SECTION -->
-  <section id="experience" class="section">
-    <div class="container">
-      <div class="section-title">
-        <span>// WORK HISTORY</span>
-        <h2>Professional Journey</h2>
-      </div>
-
-      <div class="experience-list">
-
-        <!-- Coach Tribe -->
-        <div class="glass-card exp-item">
-          <div class="exp-header">
-            <div class="exp-title">
-              <h3>PHP Developer</h3>
-              <div class="company">Coach Tribe LLC · Full-time</div>
-            </div>
-            <div class="exp-meta">
-              Mar 2026 – Aug 2026
-              <div>Wyoming, US (Remote)</div>
-            </div>
-          </div>
-          <div class="exp-body">
-            <ul>
-              <li>Developed and tested REST APIs, wrote automated background jobs for file cleanup, and implemented email notification templates.</li>
-              <li>Enhanced system performance and response times by delivering optimized backend endpoints.</li>
-            </ul>
-            <div class="exp-tags">
-              <span>Laravel</span>
-              <span>REST APIs</span>
-              <span>Queues</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cola Next -->
-        <div class="glass-card exp-item">
-          <div class="exp-header">
-            <div class="exp-title">
-              <h3>PHP Developer</h3>
-              <div class="company">Cola Next / Mezan Beverages · Full-time</div>
-            </div>
-            <div class="exp-meta">
-              Jul 2025 – Jun 2026
-              <div>Lahore, PK (On-site)</div>
-            </div>
-          </div>
-          <div class="exp-body">
-            <ul>
-              <li>Developed ERP modules including forms, reports, and backend workflows using Core PHP, Laravel, and Oracle SQL.</li>
-              <li>Built and maintained REST APIs in Laravel across full lifecycle deployment and production support.</li>
-              <li>Improved operational efficiency by optimizing workflows and saving processing time across departments.</li>
-            </ul>
-            <div class="exp-tags">
-              <span>Core PHP</span>
-              <span>Laravel</span>
-              <span>Oracle SQL</span>
-              <span>ERP</span>
-            </div>
-          </div>
-        </div>
-<!-- Destiny Marketing -->
-        <div class="glass-card exp-item">
-          <div class="exp-header">
-            <div class="exp-title">
-              <h3>WordPress Developer</h3>
-              <div class="company">Destiny Marketing · Part-time</div>
-            </div>
-            <div class="exp-meta">
-              Mar 2025 – May 2025
-              <div>Remote</div>
-            </div>
-          </div>
-          <div class="exp-body">
-            <ul>
-              <li>Configured USPS shipping rates, integrated Stripe payment solutions, and optimized site speed.</li>
-            </ul>
-            <div class="exp-tags">
-              <span>WordPress</span>
-              <span>Stripe API</span>
-            </div>
-          </div>
-        </div>
-        <!-- Brainine Solutions -->
-        <div class="glass-card exp-item">
-          <div class="exp-header">
-            <div class="exp-title">
-              <h3>PHP Developer</h3>
-              <div class="company">Brainine Solutions · Contract</div>
-            </div>
-            <div class="exp-meta">
-              Jan 2025 – Jul 2025
-              <div>Lahore, PK (On-site)</div>
-            </div>
-          </div>
-          <div class="exp-body">
-            <ul>
-              <li>Worked on a Core PHP POS system, optimizing SQL queries, improving speed, and enhancing the UI using AJAX and JavaScript.</li>
-              <li>Managed server deployments on hosting environments alongside bug fixes and reliability monitoring.</li>
-            </ul>
-            <div class="exp-tags">
-              <span>Core PHP</span>
-              <span>MySQL</span>
-              <span>AJAX</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CAT Marketing Systems -->
-        <div class="glass-card exp-item">
-          <div class="exp-header">
-            <div class="exp-title">
-              <h3>Web Development Intern</h3>
-              <div class="company">CAT Marketing Systems · Full-time</div>
-            </div>
-            <div class="exp-meta">
-              Jul 2024 – Dec 2024
-              <div>Lahore, PK (On-site)</div>
-            </div>
-          </div>
-          <div class="exp-body">
-            <ul>
-              <li>Built a Warehouse Management System in Core PHP from scratch by collecting requirements from clients and designing core modules end-to-end.</li>
-            </ul>
-            <div class="exp-tags">
-              <span>Core PHP</span>
-              <span>MySQL</span>
-              <span>WMS</span>
-            </div>
-          </div>
-        </div>
-
-        
-
-      </div>
-    </div>
-  </section>
-
-  <!-- RECOMMENDATIONS SECTION -->
-  <section id="recommendations" class="section">
-    <div class="container">
-      <div class="section-title">
-        <span>// TESTIMONIALS</span>
-        <h2>LinkedIn Recommendations</h2>
-        <p>Endorsements from engineering leaders, managers, and former colleagues.</p>
-      </div>
-
-      <div class="recommendations-grid">
-
-        <!-- Chiraz Bensemmane -->
-        <div class="glass-card recommendation-card">
-          <div>
-            <i class="fa-solid fa-quote-left quote-icon"></i>
-            <p class="recommendation-text">
-              "Kamran has been working at Coach Tribe for quite some time and is a great addition to the team. He is a very diligent Backend Developer specializing in PHP and Laravel. As our team is 100% remote, Kamran has developed great communication skills and engages actively in team meetings. He manages his tasks independently and works effectively. I recommend Kamran for backend roles requiring a reliable developer with a strong work ethic."
-            </p>
-          </div>
-          <div class="author-info">
-            <div class="author-avatar">CB</div>
-            <div class="author-details">
-              <h4>Chiraz Bensemmane</h4>
-              <p>Founder & CEO at Coach Tribe & Pitch World Fast</p>
-              <span class="relationship-tag">Managed Kamran directly</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Imran Ahsanullah -->
-        <div class="glass-card recommendation-card">
-          <div>
-            <i class="fa-solid fa-quote-left quote-icon"></i>
-            <p class="recommendation-text">
-              "I had the privilege of working with Kamran for more than two years. He consistently proved himself to be an exceptional Software Engineer with strong technical expertise, dedication, and a results-oriented mindset. Kamran played a significant role in delivering business-critical ERP applications. His expertise in system design, troubleshooting, and performance optimization enabled our team to deliver reliable solutions."
-            </p>
-          </div>
-          <div class="author-info">
-            <div class="author-avatar">IA</div>
-            <div class="author-details">
-              <h4>Imran Ahsanullah</h4>
-              <p>Senior MIS Manager & ERP Consultant at Cola Next (Mezan Group)</p>
-              
-              <span class="relationship-tag">Managed Kamran directly</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ehsan ul Khaliq -->
-        <div class="glass-card recommendation-card">
-          <div>
-            <i class="fa-solid fa-quote-left quote-icon"></i>
-            <p class="recommendation-text">
-              "I wholeheartedly recommend Kamran Zafar for his exceptional skills in JavaScript, PHP, and software engineering. His technical expertise has been invaluable in our collaborative projects, and I am confident he would be a significant asset to any team or engineering project."
-            </p>
-          </div>
-          <div class="author-info">
-            <div class="author-avatar">EK</div>
-            <div class="author-details">
-              <h4>Ehsan ul Khaliq</h4>
-              <p>Software Design Engineer @ TeReSol</p>
-              <span class="relationship-tag">Studied together & Collaborated</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS SECTION -->
-  <section id="projects" class="section">
-    <div class="container">
-      <div class="section-title">
-        <span>// PORTFOLIO</span>
-        <h2>Selected Projects</h2>
-      </div>
+    <!-- FEATURED PROJECTS -->
+    <section id="projects" class="projects-section">
+      <div class="section-num">02 / SELECTED PROJECTS</div>
+      <h2 class="section-title">Featured work</h2>
+      <p class="section-subtitle">A curated set of web applications and custom software built for real impact.</p>
 
       <div class="projects-grid">
 
-        <div class="glass-card project-card">
-          <div>
-            <h3>Enterprise ERP Solutions</h3>
-            <p>ERP suite for distribution, sales, reports, and stock management.</p>
+        <!-- PROJECT 1: GST BILLING SYSTEM -->
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <!-- EASY TO EDIT: Replace src below with your GitHub image link or local path -->
+            <img src="uploads/1.PNG" alt="GST Billing & Invoicing System" />
           </div>
-          <a href="https://app.oradigitals.com" target="_blank" class="btn btn-secondary">
-            View <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">PHP</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">Financial Reports</span>
+            </div>
+            <h3 class="project-title">GST Billing & Invoicing System</h3>
+            <p class="project-desc">A transactional billing engine that automates multi-rate tax calculations, customer ledgers, and invoice generation.</p>
+            <div class="project-links">
+              <a href="#" class="btn-project">View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
         </div>
 
-        <div class="glass-card project-card">
-          <div>
-            <h3>Warehouse Management</h3>
-            <p>Multi-branch inventory tool with racks tracking and barcode scanning.</p>
+        <!-- PROJECT 2: COACHTRIBE -->
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <!-- EASY TO EDIT: Replace src below with your GitHub image link or local path -->
+            <img src="uploads/new dashboard eg.PNG" alt="CoachTribe Platform" />
           </div>
-          <a href="https://github.com/kamranzafar4343/Warehouse-Management-System" target="_blank" class="btn btn-secondary">
-            GitHub <i class="fa-brands fa-github"></i>
-          </a>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Laravel</span>
+              <span class="project-tag">REST APIs</span>
+              <span class="project-tag">Background Queues</span>
+            </div>
+            <h3 class="project-title">CoachTribe SaaS Platform</h3>
+            <p class="project-desc">Backend infrastructure for an international remote coaching platform featuring queues, email dispatchers, and automated jobs.</p>
+            <div class="project-links">
+              <a href="https://coachtribe.co" target="_blank" class="btn-project">Visit Platform <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
         </div>
 
-        <div class="glass-card project-card">
-          <div>
-            <h3>AI Summarizer</h3>
-            <p>API utility generating quick summaries for long-form articles.</p>
+        <!-- PROJECT 3: ENTERPRISE ERP -->
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <!-- EASY TO EDIT: Replace src below with your GitHub image link or local path -->
+            <img src="uploads/article front.png" alt="Enterprise ERP Solutions" />
           </div>
-          <a href="https://openai-gpt4model-article-summarizer.netlify.app/" target="_blank" class="btn btn-secondary">
-            Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Laravel</span>
+              <span class="project-tag">Oracle SQL</span>
+              <span class="project-tag">ERP</span>
+            </div>
+            <h3 class="project-title">Enterprise ERP Solutions</h3>
+            <p class="project-desc">Scalable ERP suite built for sales tracking, inventory workflows, multi-department operational reports, and distribution pipelines.</p>
+            <div class="project-links">
+              <a href="https://app.oradigitals.com" target="_blank" class="btn-project">View Solution <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: WAREHOUSE MANAGEMENT SYSTEM -->
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <!-- EASY TO EDIT: Replace src below with your GitHub image link or local path -->
+            <img src="uploads/new dashboard eg.PNG" alt="Warehouse Management System" />
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-tag">Core PHP</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">Barcodes</span>
+            </div>
+            <h3 class="project-title">Warehouse Management System</h3>
+            <p class="project-desc">Multi-branch inventory tool featuring automated rack assignments, stock tracking, and barcode scanning modules.</p>
+            <div class="project-links">
+              <a href="https://github.com/kamranzafar4343/Warehouse-Management-System" target="_blank" class="btn-project">GitHub Repo <i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="container" style="text-align: center;">
-      <div class="section-title">
-        <span>// CONTACT</span>
-        <h2>Let's Connect</h2>
-        <p style="margin: 8px auto 0;">Open to software engineering roles, backend development, and remote opportunities.</p>
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="section-num">03 / TESTIMONIALS</div>
+      <h2 class="section-title">What people say</h2>
+      <p class="section-subtitle">Recommendations from managers, founders, and engineering peers.</p>
+
+      <div class="testimonials-grid">
+        
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Kamran is a very diligent Backend Developer specializing in PHP and Laravel. He manages his tasks independently and works effectively in a remote setup. I recommend Kamran for backend roles requiring a reliable developer with a strong work ethic."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">CB</div>
+            <div class="author-info">
+              <h5>Chiraz Bensemmane</h5>
+              <p>Founder & CEO at Coach Tribe</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"I had the privilege of working with Kamran for more than two years. He consistently proved himself to be an exceptional Software Engineer with strong technical expertise, dedication, and a results-oriented mindset."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">IA</div>
+            <div class="author-info">
+              <h5>Imran Ahsanullah</h5>
+              <p>Senior MIS Manager & ERP Consultant</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"I wholeheartedly recommend Kamran Zafar for his skills in JavaScript, PHP, and web development. His expertise was invaluable in our collaborative projects."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">EK</div>
+            <div class="author-info">
+              <h5>Ehsan ul Khaliq</h5>
+              <p>Software Design Engineer @ TeReSol</p>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <div class="hero-btns" style="justify-content: center; margin-top: 20px;">
-        <a href="mailto:kamranzafar4343@gmail.com" class="btn btn-primary">
-          Email Me <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/kamranzafar4343/" target="_blank" class="btn btn-secondary">
-          LinkedIn <i class="fa-brands fa-linkedin"></i>
-        </a>
+    <!-- METRICS GRID -->
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <h3>2+</h3>
+        <p>Years Experience</p>
       </div>
-    </div>
-  </section>
+      <div class="metric-card">
+        <h3>10+</h3>
+        <p>Projects Delivered</p>
+      </div>
+      <div class="metric-card">
+        <h3>PHP</h3>
+        <p>Core & Laravel Focus</p>
+      </div>
+      <div class="metric-card">
+        <h3>SQL</h3>
+        <p>MySQL & Oracle SQL</p>
+      </div>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p>© 2026 Kamran Zafar. Engineered for performant web apps.</p>
-    </div>
-  </footer>
+    <!-- CONTACT FORM -->
+    <section id="contact" class="contact-card">
+      <div class="section-num">04 / CONTACT</div>
+      <h2 class="section-title">Let's build something together</h2>
+      <p class="section-subtitle">Have a project or web application challenge in mind? Send me a message.</p>
 
-  <!-- CURSOR INTERACTION SCRIPT -->
-  <script>
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
+      <form action="mailto:kamranzafar4343@gmail.com" method="post" enctype="text/plain">
+        <div class="form-grid">
+          <input type="text" class="form-input" placeholder="Your Name" required />
+          <input type="email" class="form-input" placeholder="Your Email" required />
+          <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button type="submit" class="btn-main" style="width: 100%; justify-content: center; border: none; cursor: pointer;">Send message <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </section>
 
-    window.addEventListener('mousemove', (e) => {
-      const posX = e.clientX;
-      const posY = e.clientY;
+    <footer>
+      © 2026 Kamran Zafar. All rights reserved.
+    </footer>
 
-      cursorDot.style.left = `${posX}px`;
-      cursorDot.style.top = `${posY}px`;
-
-      cursorOutline.animate({
-        left: `${posX}px`,
-        top: `${posY}px`
-      }, { duration: 500, fill: "forwards" });
-    });
-  </script>
+  </div>
 
 </body>
 </html>
