@@ -11,7 +11,7 @@ window.PORTFOLIO_DATA = {
   projects: [
     {
       name: "Daniel Solar Engineering & Design",
-      image: "/uploads/danielsolar",
+      image: "/uploads/danielsolar.png",
       tags: ["Solar Engineering", "Web Development", "SEO"],
       url: "https://danielsolared.com",
       desc: "Professional solar engineering and design website built to showcase services, projects and contractor-focused solar solutions."
@@ -50,7 +50,7 @@ window.PORTFOLIO_DATA = {
 
     {
       name: "Nabeel Website",
-      image: "/uploads/nabeel",
+      image: "/uploads/nabeel.png",
       tags: ["Web Development", "Responsive Design", "Frontend"],
       url: "https://kamranzafar4343-nabeel-stage-v3.vercel.app/",
       desc: "A modern responsive website focused on clean presentation, usability and optimized frontend delivery."
@@ -58,7 +58,7 @@ window.PORTFOLIO_DATA = {
 
     {
       name: "North Solar",
-      image: "/uploads/northstar",
+      image: "/uploads/northstar.png",
       tags: ["Solar", "Web Development", "Responsive Design"],
       url: "https://aureline-solar.vercel.app/",
       desc: "A modern solar company website featuring responsive layouts, service presentation and a conversion-focused user experience."
@@ -66,7 +66,7 @@ window.PORTFOLIO_DATA = {
 
     {
       name: "Europe Visa Centre",
-      image: "/uploads/europevisacentre",
+      image: "/uploads/europevisacentre.png",
       tags: ["Web Development", "Responsive Design", "UI/UX"],
       desc: "A professional visa services website designed to present immigration and visa assistance services through a clear and responsive interface."
     },
