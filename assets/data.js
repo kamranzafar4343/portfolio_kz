@@ -1,4 +1,3 @@
-```javascript
 window.PORTFOLIO_DATA = {
   person: {
     name: "Kamran Zafar",
@@ -226,4 +225,3 @@ window.PORTFOLIO_DATA = {
     }
   ]
 };
-```
