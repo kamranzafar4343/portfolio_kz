@@ -48,13 +48,13 @@ window.PORTFOLIO_DATA = {
       desc: "Backend systems for distribution, departmental reporting and multi-branch transaction tracking."
     },
 
-    {
-      name: "Nabeel Website",
-      image: "/uploads/nabeel.png",
-      tags: ["Web Development", "Responsive Design", "Frontend"],
-      url: "https://kamranzafar4343-nabeel-stage-v3.vercel.app/",
-      desc: "A modern responsive website focused on clean presentation, usability and optimized frontend delivery."
-    },
+    // {
+    //   name: "Nabeel Website",
+    //   image: "/uploads/nabeel.png",
+    //   tags: ["Web Development", "Responsive Design", "Frontend"],
+    //   url: "https://kamranzafar4343-nabeel-stage-v3.vercel.app/",
+    //   desc: "A modern responsive website focused on clean presentation, usability and optimized frontend delivery."
+    // },
 
     {
       name: "North Solar",
