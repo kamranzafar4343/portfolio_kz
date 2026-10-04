@@ -19,3 +19,7 @@ h1,h2,h3,.brand,.stat strong{font-family:'Space Grotesk',Manrope,sans-serif}.nav
 @media(max-width:900px){.language-wrap{margin-inline-start:0}.home-page .hero-grid{grid-template-columns:1fr}.home-page .portrait{justify-self:start;width:min(100%,390px)}.home-timeline::before{left:10px}.home-timeline .job{width:calc(100% - 38px);margin-inline-start:38px!important}.home-timeline .job::after,.home-timeline .job:nth-child(odd)::after,.home-timeline .job:nth-child(even)::after{left:-40px;right:auto}.brand-proof-inner{flex-wrap:wrap;padding-block:30px}.footer-main{grid-template-columns:1fr}}
 @media(max-width:600px){.home-page .hero{padding:60px 20px}.home-page .hero h1{font-size:3.2rem}.home-page .stat{padding:24px 18px}.brand-proof-inner{gap:18px}.brand-proof-inner>span:first-child{width:100%;text-align:center}.brand-proof img{max-width:125px}.home-contact .form{padding:20px}.footer-main{display:flex;align-items:flex-start}}
 .home-page .portrait{width:100%}
+.home-page .portrait-note{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:calc(100% - 36px)}
+.portrait-note .linkedin-badge{display:inline-flex;flex:0 0 26px;align-items:center;justify-content:center;width:26px;height:26px;border-radius:4px;background:#0a66c2;color:#fff;line-height:1}
+.portrait-note .linkedin-badge svg{display:block;flex:none;width:17px;height:17px;fill:currentColor}
+.portrait-note .linkedin-badge:hover,.portrait-note .linkedin-badge:focus-visible{background:#004182}
