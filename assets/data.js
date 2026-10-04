@@ -5,6 +5,7 @@ window.PORTFOLIO_DATA = {
     phone: "+92 318 4090843",
     whatsapp: "923184090843",
     github: "https://github.com/kamranzafar4343",
+    linkedin: "https://www.linkedin.com/in/kamranzafar4343",
     location: "Lahore, Pakistan"
   },
 
